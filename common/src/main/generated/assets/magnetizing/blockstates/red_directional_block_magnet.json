@@ -1,0 +1,54 @@
+{
+  "variants": {
+    "disabled=false,facing=down": {
+      "model": "magnetizing:block/red_directional_block_magnet",
+      "x": 180
+    },
+    "disabled=false,facing=east": {
+      "model": "magnetizing:block/red_directional_block_magnet",
+      "x": 90,
+      "y": 90
+    },
+    "disabled=false,facing=north": {
+      "model": "magnetizing:block/red_directional_block_magnet",
+      "x": 90
+    },
+    "disabled=false,facing=south": {
+      "model": "magnetizing:block/red_directional_block_magnet",
+      "x": 270
+    },
+    "disabled=false,facing=up": {
+      "model": "magnetizing:block/red_directional_block_magnet"
+    },
+    "disabled=false,facing=west": {
+      "model": "magnetizing:block/red_directional_block_magnet",
+      "x": 90,
+      "y": 270
+    },
+    "disabled=true,facing=down": {
+      "model": "magnetizing:block/red_directional_block_magnet_disabled",
+      "x": 180
+    },
+    "disabled=true,facing=east": {
+      "model": "magnetizing:block/red_directional_block_magnet_disabled",
+      "x": 90,
+      "y": 90
+    },
+    "disabled=true,facing=north": {
+      "model": "magnetizing:block/red_directional_block_magnet_disabled",
+      "x": 90
+    },
+    "disabled=true,facing=south": {
+      "model": "magnetizing:block/red_directional_block_magnet_disabled",
+      "x": 270
+    },
+    "disabled=true,facing=up": {
+      "model": "magnetizing:block/red_directional_block_magnet_disabled"
+    },
+    "disabled=true,facing=west": {
+      "model": "magnetizing:block/red_directional_block_magnet_disabled",
+      "x": 90,
+      "y": 270
+    }
+  }
+}

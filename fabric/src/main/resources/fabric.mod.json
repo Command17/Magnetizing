@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "id": "magnetizing",
+  "version": "${version}",
+  "name": "Magnetizing",
+  "description": "",
+  "authors": [
+    "Command17"
+  ],
+  "contact": {
+    "homepage": ""
+  },
+  "license": "MIT",
+  "icon": "assets/magnetizing/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.github.command17.magnetizing.fabric.MagnetizingFabric"
+    ],
+    "client": [
+      "com.github.command17.magnetizing.fabric.client.MagnetizingFabricClient"
+    ],
+    "fabric-datagen": [
+      "com.github.command17.magnetizing.fabric.data.MagnetizingDataGen"
+    ]
+  },
+  "mixins": [
+    "magnetizing.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.18.1",
+    "minecraft": "~1.21.1",
+    "java": ">=21",
+    "architectury": ">=13.0.8",
+    "fabric-api": "*"
+  },
+  "suggests": {
+    "another-mod": "*"
+  }
+}

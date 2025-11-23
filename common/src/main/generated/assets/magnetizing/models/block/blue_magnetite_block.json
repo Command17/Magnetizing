@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "magnetizing:block/blue_magnetite_block"
+  }
+}

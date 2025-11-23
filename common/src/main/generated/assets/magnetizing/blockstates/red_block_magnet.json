@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "disabled=false": {
+      "model": "magnetizing:block/red_block_magnet"
+    },
+    "disabled=true": {
+      "model": "magnetizing:block/red_block_magnet_disabled"
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "item.magnetizing.raw_magnetite": "Raw Magnetite",
+  "item.magnetizing.magnetite_ingot": "Magnetite Ingot",
+  "item.magnetizing.blue_magnetite_ingot": "Blue Magnetite Ingot",
+  "item.magnetizing.red_magnetite_ingot": "Red Magnetite Ingot",
+
+  "block.magnetizing.magnetite_ore": "Magnetite Ore",
+  "block.magnetizing.deepslate_magnetite_ore": "Deepslate Magnetite Ore",
+  "block.magnetizing.magnetite_block": "Magnetite Block",
+  "block.magnetizing.blue_magnetite_block": "Blue Magnetite Block",
+  "block.magnetizing.red_magnetite_block": "Red Magnetite Block",
+  "block.magnetizing.blue_directional_block_magnet": "Blue Directional Block Magnet",
+  "block.magnetizing.red_directional_block_magnet": "Red Directional Block Magnet",
+  "block.magnetizing.blue_block_magnet": "Blue Block Magnet",
+  "block.magnetizing.red_block_magnet": "Red Block Magnet",
+
+  "itemGroup.magnetizing.main": "Magnetizing",
+
+  "message.magnetizing.magnetic_range": "Magnetic range is set to %s block(s)"
+}

@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.7,
+  "group": "magnetite_ingot_smelting",
+  "ingredient": {
+    "item": "magnetizing:deepslate_magnetite_ore"
+  },
+  "result": {
+    "id": "magnetizing:magnetite_ingot"
+  }
+}
