@@ -9,6 +9,7 @@ import net.minecraft.core.component.DataComponentType;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.codec.ByteBufCodecs;
 import net.minecraft.util.ExtraCodecs;
+import net.minecraft.util.Unit;
 
 import java.util.function.Supplier;
 
@@ -26,6 +27,9 @@ public final class ModItemComponents {
 
     public static final RegistrySupplier<DataComponentType<MagneticPole>> MAGNET_POLE = register("magnet_pole",
             () -> DataComponentType.<MagneticPole>builder().persistent(MagneticPole.CODEC).networkSynchronized(MagneticPole.STREAM_CODEC).build());
+
+    public static final RegistrySupplier<DataComponentType<Unit>> MAGNETIC_RESISTANCE = register("magnetic_resistance",
+            () -> DataComponentType.<Unit>builder().persistent(Unit.CODEC).build());
 
     private static<T> RegistrySupplier<DataComponentType<T>> register(String id, Supplier<DataComponentType<T>> sup) {
         return REGISTRY.register(id, sup);

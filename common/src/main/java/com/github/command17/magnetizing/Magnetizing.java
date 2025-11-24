@@ -2,6 +2,7 @@ package com.github.command17.magnetizing;
 
 import com.github.command17.magnetizing.common.block.ModBlocks;
 import com.github.command17.magnetizing.common.block.entity.ModBlockEntities;
+import com.github.command17.magnetizing.common.item.ModArmorMaterials;
 import com.github.command17.magnetizing.common.item.ModItems;
 import com.github.command17.magnetizing.common.item.component.ModItemComponents;
 import com.github.command17.magnetizing.common.item.tab.ModCreativeModeTabs;
@@ -19,6 +20,7 @@ public final class Magnetizing {
         LOGGER.info("Initializing...");
         ModBlocks.register();
         ModItemComponents.register();
+        ModArmorMaterials.register();
         ModItems.register();
         ModBlockEntities.register();
         ModCreativeModeTabs.register();

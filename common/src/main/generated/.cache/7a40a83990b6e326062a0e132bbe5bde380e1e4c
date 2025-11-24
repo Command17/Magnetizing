@@ -1,4 +1,4 @@
-// 1.21.1	2025-11-24T15:47:37.9516174	Magnetizing/Recipes
+// 1.21.1	2025-11-24T18:18:18.5364828	Magnetizing/Recipes
 fd67edff010839e92a9594d3407fd5c7069c5321 data\magnetizing\recipe\magnetite_ingot_from_blasting_raw_magnetite.json
 fda117e7ae7df69c230e760314c11ad16eb4428e data\magnetizing\recipe\magnetite_ingot_from_smelting_magnetite_ore.json
 98fa0a3adaf65d259575c3fb3d3be3aae5745088 data\magnetizing\recipe\blue_magnetite_block.json
@@ -8,8 +8,8 @@ d9bff246611f9021ad63d8adf8a896be19c1200e data\magnetizing\advancement\recipes\bu
 043fc37b91ae8630374a83eaa4c62d794322715b data\magnetizing\advancement\recipes\misc\red_magnetite_ingot.json
 9b906bef522d62d0f0b051195d062147d557693f data\magnetizing\advancement\recipes\misc\magnetite_ingot.json
 f7f1fd248cfda1962414c84a47b4b6ea14e16bb1 data\magnetizing\advancement\recipes\misc\blue_magnetite_ingot.json
-4ef5ecdc2c956761c853d9ceffcc93e988a0c763 data\magnetizing\recipe\red_magnetite_ingot.json
 eaaaef5648f1adef65142781a713ceeb872ee9d0 data\magnetizing\advancement\recipes\building_blocks\magnetite_block.json
+4ef5ecdc2c956761c853d9ceffcc93e988a0c763 data\magnetizing\recipe\red_magnetite_ingot.json
 52062d07aae663230a920b4c49702f365bcce195 data\magnetizing\recipe\blue_magnetite_ingot.json
 4add1496c8560080cd7f23cac4eec74053dd5f13 data\magnetizing\advancement\recipes\misc\magnetite_ingot_from_smelting_raw_magnetite.json
 0d1f8ba1ef1eed326873d958c9b7dfae74b6f02d data\magnetizing\recipe\crafting_red_magnetite_ingot.json

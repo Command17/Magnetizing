@@ -7,6 +7,9 @@ import com.github.command17.magnetizing.common.util.MagneticPole;
 import dev.architectury.registry.registries.DeferredRegister;
 import dev.architectury.registry.registries.RegistrySupplier;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.util.Unit;
+import net.minecraft.world.item.ArmorItem;
+import net.minecraft.world.item.ArmorMaterials;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
@@ -44,6 +47,12 @@ public final class ModItems {
                     .component(ModItemComponents.MAGNET_POLE.get(), MagneticPole.PLUS)
                     .component(ModItemComponents.MAGNET_FORCE.get(), 0.1)
                     .component(ModItemComponents.MAX_MAGNET_RANGE.get(), 5)
+            ));
+
+    public static final RegistrySupplier<Item> ANTI_MAGNETIC_BOOTS = register("anti_magnetic_boots",
+            () -> new ArmorItem(ModArmorMaterials.ANTI_MAGNETIC, ArmorItem.Type.BOOTS, new Item.Properties()
+                    .durability(150)
+                    .component(ModItemComponents.MAGNETIC_RESISTANCE.get(), Unit.INSTANCE)
             ));
 
     private static RegistrySupplier<Item> registerSimpleBlockItem(String id, Supplier<Block> sup) {

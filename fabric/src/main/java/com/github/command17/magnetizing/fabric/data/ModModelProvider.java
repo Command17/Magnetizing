@@ -99,6 +99,7 @@ public class ModModelProvider extends FabricModelProvider {
         flatItem(ModItems.RED_MAGNETITE_INGOT.get(), generator);
         flatItem(ModItems.BLUE_ITEM_MAGNET.get(), generator);
         flatItem(ModItems.RED_ITEM_MAGNET.get(), generator);
+        flatItem(ModItems.ANTI_MAGNETIC_BOOTS.get(), generator);
     }
 
     private static void simpleBlock(Block block, BlockModelGenerators generator) {

@@ -1,10 +1,16 @@
 package com.github.command17.magnetizing.common.block.entity;
 
 import com.github.command17.magnetizing.common.block.MagneticBlock;
+import com.github.command17.magnetizing.common.item.component.ModItemComponents;
 import com.github.command17.magnetizing.common.util.MagneticPole;
 import net.minecraft.core.BlockPos;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
@@ -12,6 +18,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 
+import java.util.Iterator;
 import java.util.List;
 
 public class MagneticBlockEntity extends BlockEntity {
@@ -42,8 +49,26 @@ public class MagneticBlockEntity extends BlockEntity {
     }
 
     public boolean canAffectEntity(Entity entity) {
-        if (entity instanceof Player player) {
-            return !player.getAbilities().flying;
+        if (entity instanceof LivingEntity livingEntity) {
+            Iterator<ItemStack> iterator = livingEntity.getArmorSlots().iterator();
+            do {
+                ItemStack stack = iterator.next();
+                if (stack.has(ModItemComponents.MAGNETIC_RESISTANCE.get())) {
+                    // Damage boots
+                    if (stack.isDamageableItem() && this.level.getGameTime() % 400 == 0) {
+                        EquipmentSlot slot = livingEntity.getEquipmentSlotForItem(stack);
+                        stack.hurtAndBreak(1, livingEntity, slot);
+                    }
+
+                    return false;
+                }
+            } while (iterator.hasNext());
+
+            if (livingEntity instanceof Player player) {
+                return !player.getAbilities().flying;
+            }
+        } else if (entity instanceof ItemEntity itemEntity) {
+            return !itemEntity.getItem().has(ModItemComponents.MAGNETIC_RESISTANCE.get());
         }
 
         return true;
