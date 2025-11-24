@@ -2,6 +2,8 @@ package com.github.command17.magnetizing.common.item;
 
 import com.github.command17.magnetizing.Magnetizing;
 import com.github.command17.magnetizing.common.block.ModBlocks;
+import com.github.command17.magnetizing.common.item.component.ModItemComponents;
+import com.github.command17.magnetizing.common.util.MagneticPole;
 import dev.architectury.registry.registries.DeferredRegister;
 import dev.architectury.registry.registries.RegistrySupplier;
 import net.minecraft.core.registries.Registries;
@@ -28,6 +30,21 @@ public final class ModItems {
     public static final RegistrySupplier<Item> MAGNETITE_INGOT = registerSimple("magnetite_ingot");
     public static final RegistrySupplier<Item> BLUE_MAGNETITE_INGOT = registerSimple("blue_magnetite_ingot");
     public static final RegistrySupplier<Item> RED_MAGNETITE_INGOT = registerSimple("red_magnetite_ingot");
+    public static final RegistrySupplier<Item> BLUE_ITEM_MAGNET = register("blue_item_magnet",
+            () -> new MagnetItem(new Item.Properties()
+                    .stacksTo(1)
+                    .component(ModItemComponents.MAGNET_POLE.get(), MagneticPole.MINUS)
+                    .component(ModItemComponents.MAGNET_FORCE.get(), 0.1)
+                    .component(ModItemComponents.MAX_MAGNET_RANGE.get(), 5)
+            ));
+
+    public static final RegistrySupplier<Item> RED_ITEM_MAGNET = register("red_item_magnet",
+            () -> new MagnetItem(new Item.Properties()
+                    .stacksTo(1)
+                    .component(ModItemComponents.MAGNET_POLE.get(), MagneticPole.PLUS)
+                    .component(ModItemComponents.MAGNET_FORCE.get(), 0.1)
+                    .component(ModItemComponents.MAX_MAGNET_RANGE.get(), 5)
+            ));
 
     private static RegistrySupplier<Item> registerSimpleBlockItem(String id, Supplier<Block> sup) {
         return register(id, () -> new BlockItem(sup.get(), new Item.Properties()));

@@ -30,6 +30,9 @@ public final class ModCreativeModeTabs {
                                 output.accept(ModItems.BLUE_MAGNETITE_BLOCK.get());
                                 output.accept(ModItems.RED_MAGNETITE_BLOCK.get());
 
+                                output.accept(ModItems.BLUE_ITEM_MAGNET.get());
+                                output.accept(ModItems.RED_ITEM_MAGNET.get());
+
                                 output.accept(ModItems.BLUE_BLOCK_MAGNET.get());
                                 output.accept(ModItems.RED_BLOCK_MAGNET.get());
                                 output.accept(ModItems.BLUE_DIRECTIONAL_BLOCK_MAGNET.get());

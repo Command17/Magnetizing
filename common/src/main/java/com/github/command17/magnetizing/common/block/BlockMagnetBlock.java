@@ -1,12 +1,12 @@
 package com.github.command17.magnetizing.common.block;
 
 import com.github.command17.magnetizing.Magnetizing;
+import com.github.command17.magnetizing.common.util.MagnetUtil;
 import com.github.command17.magnetizing.common.util.MagneticPole;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.particles.DustParticleOptions;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -19,9 +19,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.phys.BlockHitResult;
-import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.NotNull;
-import org.joml.Vector3f;
 
 public class BlockMagnetBlock extends MagneticBlock {
     public static final MapCodec<BlockMagnetBlock> CODEC = RecordCodecBuilder.mapCodec(
@@ -50,29 +48,8 @@ public class BlockMagnetBlock extends MagneticBlock {
                 level.playSound(null, pos, SoundEvents.LEVER_CLICK, SoundSource.BLOCKS, 1, 0.75f + range / 10f);
             }
 
-            // Change color based on current magnetic pole
-            MagneticPole pole = this.getPole(pos, state, level);
-            Vector3f color = pole == MagneticPole.PLUS ? DustParticleOptions.REDSTONE_PARTICLE_COLOR : Vec3.fromRGB24(0x4903fc).toVector3f();
-
             player.displayClientMessage(Magnetizing.translatable("message.", ".magnetic_range", range).withStyle(ChatFormatting.GRAY), true);
-
-            int startX = pos.getX() - range;
-            int startY = pos.getY() - range;
-            int startZ = pos.getZ() - range;
-            int endX = pos.getX() + range;
-            int endY = pos.getY() + range;
-            int endZ = pos.getZ() + range;
-            for (int x = startX; x <= endX; x++) {
-                for (int y = startY; y <= endY; y++) {
-                    for (int z = startZ; z <= endZ; z++) {
-                        if (x < endX && z < endZ && y < endY && x > startX && z > startZ && y > startY) {
-                            continue;
-                        }
-
-                        ((ServerLevel) level).sendParticles(new DustParticleOptions(color, 2), x + 0.5, y + 0.5, z + 0.5, 5 / range, 0, 0, 0, 0);
-                    }
-                }
-            }
+            MagnetUtil.showBoxParticlesServerSide((ServerLevel) level, pos.getCenter(), range, pole);
         }
 
         return InteractionResult.SUCCESS;

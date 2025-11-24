@@ -1,6 +1,7 @@
 package com.github.command17.magnetizing.common.block;
 
 import com.github.command17.magnetizing.Magnetizing;
+import com.github.command17.magnetizing.common.util.MagnetUtil;
 import com.github.command17.magnetizing.common.util.MagneticPole;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
@@ -71,7 +72,7 @@ public class DirectionalBlockMagnetBlock extends DirectionalMagneticBlock {
 
             // Change color based on current magnetic pole
             MagneticPole pole = this.getPole(pos, state, level);
-            Vector3f color = pole == MagneticPole.PLUS ? DustParticleOptions.REDSTONE_PARTICLE_COLOR : Vec3.fromRGB24(0x4903fc).toVector3f();
+            Vector3f color = MagnetUtil.getColorBasedOnPole(pole);
 
             RandomSource random = level.getRandom();
 
