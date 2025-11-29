@@ -1,6 +1,6 @@
 modLoader = "javafml"
 loaderVersion = "[2,)"
-#issueTrackerURL = ""
+issueTrackerURL = "https://github.com/Command17/Magnetizing/issues"
 license = "MIT"
 
 [[mods]]
@@ -9,9 +9,10 @@ version = "${version}"
 displayName = "Magnetizing"
 authors = "Command17"
 description = '''
-
+Adds items and blocks based around magnets
 '''
-#logoFile = ""
+
+logoFile = "assets/magnetizing/icon.png"
 
 [[dependencies.magnetizing]]
 modId = "neoforge"

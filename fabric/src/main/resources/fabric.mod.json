@@ -8,7 +8,8 @@
     "Command17"
   ],
   "contact": {
-    "homepage": ""
+    "homepage": "https://modrinth.com/mod/magnetizing",
+    "issues": "https://github.com/Command17/Magnetizing"
   },
   "license": "MIT",
   "icon": "assets/magnetizing/icon.png",
@@ -37,5 +38,12 @@
   },
   "suggests": {
     "another-mod": "*"
+  },
+  "custom": {
+    "modmenu": {
+      "links": {
+        "modmenu.source": "https://github.com/Command17/Magnetizing"
+      }
+    }
   }
 }
