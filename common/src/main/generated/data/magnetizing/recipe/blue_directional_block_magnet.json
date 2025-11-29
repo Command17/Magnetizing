@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "key": {
+    "#": {
+      "item": "minecraft:cobblestone"
+    },
+    "r": {
+      "item": "minecraft:redstone"
+    },
+    "x": {
+      "item": "magnetizing:blue_magnetite_block"
+    }
+  },
+  "pattern": [
+    "xxx",
+    "#r#",
+    "###"
+  ],
+  "result": {
+    "count": 1,
+    "id": "magnetizing:blue_directional_block_magnet"
+  }
+}

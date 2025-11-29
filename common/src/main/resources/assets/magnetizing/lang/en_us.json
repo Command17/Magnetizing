@@ -5,10 +5,14 @@
   "item.magnetizing.red_magnetite_ingot": "Red Magnetite Ingot",
   "item.magnetizing.blue_item_magnet": "Blue Item Magnet",
   "item.magnetizing.red_item_magnet": "Red Item Magnet",
-  "item.magnetizing.anti_magnetic_boots": "Anti Magnetic Boots",
+  "item.magnetizing.anti_magnetic_boots": "Anti-Magnetic Boots",
+  "item.magnetizing.magnetite_nugget": "Magnetite Nugget",
+  "item.magnetizing.blue_magnetite_nugget": "Blue Magnetite Nugget",
+  "item.magnetizing.red_magnetite_nugget": "Red Magnetite Nugget",
 
   "block.magnetizing.magnetite_ore": "Magnetite Ore",
   "block.magnetizing.deepslate_magnetite_ore": "Deepslate Magnetite Ore",
+  "block.magnetizing.raw_magnetite_block": "Raw Magnetite Block",
   "block.magnetizing.magnetite_block": "Magnetite Block",
   "block.magnetizing.blue_magnetite_block": "Blue Magnetite Block",
   "block.magnetizing.red_magnetite_block": "Red Magnetite Block",
@@ -19,5 +23,14 @@
 
   "itemGroup.magnetizing.main": "Magnetizing",
 
-  "message.magnetizing.magnetic_range": "Magnetic range is set to %s block(s)"
+  "message.magnetizing.magnetic_range": "Magnetic range is set to %s block(s)",
+
+  "tag.item.magnetizing.item_magnets": "Item Magnets",
+  "tag.item.magnetizing.block_magnets": "Block Magnets",
+  "tag.item.c.ingots.magnetite": "Magnetite Ingots",
+  "tag.item.c.nuggets.magnetite": "Magnetite Nuggets",
+  "tag.item.c.ores.magnetite": "Magnetite Ores",
+  "tag.item.c.raw_blocks.magnetite": "Raw Magnetite Blocks",
+  "tag.item.c.storage_blocks.magnetite": "Magnetite Storage Blocks",
+  "tag.item.c.storage_blocks.raw_magnetite": "Raw Magnetite Storage Blocks"
 }

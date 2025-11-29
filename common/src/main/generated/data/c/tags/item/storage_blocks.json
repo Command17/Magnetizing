@@ -1,0 +1,14 @@
+{
+  "values": [
+    {
+      "id": "#c:storage_blocks/magnetite",
+      "required": false
+    },
+    {
+      "id": "#c:storage_blocks/raw_magnetite",
+      "required": false
+    },
+    "magnetizing:blue_magnetite_block",
+    "magnetizing:red_magnetite_block"
+  ]
+}

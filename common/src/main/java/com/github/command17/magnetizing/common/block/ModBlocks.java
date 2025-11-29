@@ -23,6 +23,9 @@ public final class ModBlocks {
     public static final RegistrySupplier<Block> DEEPSLATE_MAGNETITE_ORE = registerSimple("deepslate_magnetite_ore",
             () -> Properties.ofFullCopy(Blocks.DEEPSLATE_IRON_ORE));
 
+    public static final RegistrySupplier<Block> RAW_MAGNETITE_BLOCK = registerSimple("raw_magnetite_block",
+            () -> Properties.ofFullCopy(Blocks.RAW_IRON_BLOCK));
+
     public static final RegistrySupplier<Block> MAGNETITE_BLOCK = registerSimple("magnetite_block",
             () -> Properties.ofFullCopy(Blocks.IRON_BLOCK));
 

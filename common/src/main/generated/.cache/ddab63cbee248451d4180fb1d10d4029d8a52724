@@ -1,3 +1,12 @@
-// 1.21.1	2025-11-24T18:18:18.5374946	Magnetizing/Tags for minecraft:block
-c63cacb71ed37200ae879744393535228c7932e9 data\minecraft\tags\block\mineable\pickaxe.json
-c63cacb71ed37200ae879744393535228c7932e9 data\minecraft\tags\block\needs_stone_tool.json
+// 1.21.1	2025-11-29T14:55:39.6040311	Magnetizing/Tags for minecraft:block
+a61232b71961ad50a419d73991021a869096434c data\c\tags\block\storage_blocks\magnetite.json
+5cec615e378a282104d69b255a2dd71910c3d185 data\c\tags\block\storage_blocks\raw_magnetite.json
+4e830bde8c1bd4c152e895db425ac879de19f6e4 data\minecraft\tags\block\mineable\pickaxe.json
+5cec615e378a282104d69b255a2dd71910c3d185 data\c\tags\block\raw_blocks\magnetite.json
+a057efb4e7479aab47a624e0726ee392607917f8 data\minecraft\tags\block\needs_stone_tool.json
+cc2664e1526451d6feeea19110033948da40fe2c data\c\tags\block\needs_wood_tool.json
+7738e566211336d312d226d9b03dd6516c5cda63 data\c\tags\block\ores.json
+b2179cd68b6f27d1fefe994a8a86fa38b2da41fd data\c\tags\block\ores\magnetite.json
+04dabeb92702cb8ee9bb9d10452f853e66f18096 data\magnetizing\tags\block\block_magnets.json
+42e1ea5639888580bd31f925711f4638f8c523a0 data\c\tags\block\raw_blocks.json
+f8b8a8ab51accde4c4bc30ca9540bff64db51b65 data\c\tags\block\storage_blocks.json

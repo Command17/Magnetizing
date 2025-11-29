@@ -21,11 +21,16 @@ public final class ModCreativeModeTabs {
                             .displayItems((parameters, output) -> {
                                 output.accept(ModItems.MAGNETITE_ORE.get());
                                 output.accept(ModItems.DEEPSLATE_MAGNETITE_ORE.get());
+
                                 output.accept(ModItems.RAW_MAGNETITE.get());
                                 output.accept(ModItems.MAGNETITE_INGOT.get());
+                                output.accept(ModItems.MAGNETITE_NUGGET.get());
                                 output.accept(ModItems.BLUE_MAGNETITE_INGOT.get());
+                                output.accept(ModItems.BLUE_MAGNETITE_NUGGET.get());
                                 output.accept(ModItems.RED_MAGNETITE_INGOT.get());
+                                output.accept(ModItems.RED_MAGNETITE_NUGGET.get());
 
+                                output.accept(ModItems.RAW_MAGNETITE_BLOCK.get());
                                 output.accept(ModItems.MAGNETITE_BLOCK.get());
                                 output.accept(ModItems.BLUE_MAGNETITE_BLOCK.get());
                                 output.accept(ModItems.RED_MAGNETITE_BLOCK.get());

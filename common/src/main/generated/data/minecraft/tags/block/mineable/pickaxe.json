@@ -4,6 +4,11 @@
     "magnetizing:deepslate_magnetite_ore",
     "magnetizing:magnetite_block",
     "magnetizing:blue_magnetite_block",
-    "magnetizing:red_magnetite_block"
+    "magnetizing:red_magnetite_block",
+    "magnetizing:raw_magnetite_block",
+    {
+      "id": "#magnetizing:block_magnets",
+      "required": false
+    }
   ]
 }

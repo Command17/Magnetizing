@@ -11,9 +11,11 @@ public final class MagnetizingDataGen implements DataGeneratorEntrypoint {
     @Override
     public void onInitializeDataGenerator(FabricDataGenerator generator) {
         FabricDataGenerator.Pack pack = generator.createPack();
+        ModBlockTagProvider blockTagProvider = pack.addProvider(ModBlockTagProvider::new);
+        pack.addProvider((output, future) -> new ModItemTagsProvider(output, future, blockTagProvider));
+        pack.addProvider(ModEntityTagProvider::new);
         pack.addProvider(ModModelProvider::new);
         pack.addProvider(ModRecipeProvider::new);
-        pack.addProvider(ModBlockTagProvider::new);
         pack.addProvider(ModLootTableProvider::new);
         pack.addProvider(ModDynamicRegistryProvider::new);
     }

@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "#c:raw_materials/magnetite",
+      "required": false
+    },
+    {
+      "id": "#c:raw_blocks/magnetite",
+      "required": false
+    }
+  ]
+}

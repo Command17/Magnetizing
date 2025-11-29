@@ -1,0 +1,10 @@
+{
+  "values": [
+    {
+      "id": "#c:nuggets/magnetite",
+      "required": false
+    },
+    "magnetizing:blue_magnetite_nugget",
+    "magnetizing:red_magnetite_nugget"
+  ]
+}

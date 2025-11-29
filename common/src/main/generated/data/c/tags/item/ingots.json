@@ -1,0 +1,10 @@
+{
+  "values": [
+    {
+      "id": "#c:ingots/magnetite",
+      "required": false
+    },
+    "magnetizing:blue_magnetite_ingot",
+    "magnetizing:red_magnetite_ingot"
+  ]
+}

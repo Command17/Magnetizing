@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": {
+      "item": "minecraft:gold_ingot"
+    },
+    "x": {
+      "item": "magnetizing:red_magnetite_block"
+    }
+  },
+  "pattern": [
+    "x x",
+    "# #",
+    "###"
+  ],
+  "result": {
+    "count": 1,
+    "id": "magnetizing:red_item_magnet"
+  }
+}

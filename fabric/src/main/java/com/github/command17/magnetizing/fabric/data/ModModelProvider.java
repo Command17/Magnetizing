@@ -44,6 +44,7 @@ public class ModModelProvider extends FabricModelProvider {
         simpleBlock(ModBlocks.MAGNETITE_BLOCK.get(), generator);
         simpleBlock(ModBlocks.BLUE_MAGNETITE_BLOCK.get(), generator);
         simpleBlock(ModBlocks.RED_MAGNETITE_BLOCK.get(), generator);
+        simpleBlock(ModBlocks.RAW_MAGNETITE_BLOCK.get(), generator);
 
         createDirectionalBlockMagnetBlock(ModBlocks.BLUE_DIRECTIONAL_BLOCK_MAGNET.get(), "blue", generator);
         createDirectionalBlockMagnetBlock(ModBlocks.RED_DIRECTIONAL_BLOCK_MAGNET.get(), "red", generator);
@@ -100,6 +101,9 @@ public class ModModelProvider extends FabricModelProvider {
         flatItem(ModItems.BLUE_ITEM_MAGNET.get(), generator);
         flatItem(ModItems.RED_ITEM_MAGNET.get(), generator);
         flatItem(ModItems.ANTI_MAGNETIC_BOOTS.get(), generator);
+        flatItem(ModItems.MAGNETITE_NUGGET.get(), generator);
+        flatItem(ModItems.BLUE_MAGNETITE_NUGGET.get(), generator);
+        flatItem(ModItems.RED_MAGNETITE_NUGGET.get(), generator);
     }
 
     private static void simpleBlock(Block block, BlockModelGenerators generator) {

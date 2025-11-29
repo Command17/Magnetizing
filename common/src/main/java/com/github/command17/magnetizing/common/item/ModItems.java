@@ -9,7 +9,6 @@ import dev.architectury.registry.registries.RegistrySupplier;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.util.Unit;
 import net.minecraft.world.item.ArmorItem;
-import net.minecraft.world.item.ArmorMaterials;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
@@ -21,6 +20,7 @@ public final class ModItems {
 
     public static final RegistrySupplier<Item> MAGNETITE_ORE = registerSimpleBlockItem("magnetite_ore", ModBlocks.MAGNETITE_ORE);
     public static final RegistrySupplier<Item> DEEPSLATE_MAGNETITE_ORE = registerSimpleBlockItem("deepslate_magnetite_ore", ModBlocks.DEEPSLATE_MAGNETITE_ORE);
+    public static final RegistrySupplier<Item> RAW_MAGNETITE_BLOCK = registerSimpleBlockItem("raw_magnetite_block", ModBlocks.RAW_MAGNETITE_BLOCK);
     public static final RegistrySupplier<Item> MAGNETITE_BLOCK = registerSimpleBlockItem("magnetite_block", ModBlocks.MAGNETITE_BLOCK);
     public static final RegistrySupplier<Item> BLUE_MAGNETITE_BLOCK = registerSimpleBlockItem("blue_magnetite_block", ModBlocks.BLUE_MAGNETITE_BLOCK);
     public static final RegistrySupplier<Item> RED_MAGNETITE_BLOCK = registerSimpleBlockItem("red_magnetite_block", ModBlocks.RED_MAGNETITE_BLOCK);
@@ -31,8 +31,11 @@ public final class ModItems {
 
     public static final RegistrySupplier<Item> RAW_MAGNETITE = registerSimple("raw_magnetite");
     public static final RegistrySupplier<Item> MAGNETITE_INGOT = registerSimple("magnetite_ingot");
+    public static final RegistrySupplier<Item> MAGNETITE_NUGGET = registerSimple("magnetite_nugget");
     public static final RegistrySupplier<Item> BLUE_MAGNETITE_INGOT = registerSimple("blue_magnetite_ingot");
+    public static final RegistrySupplier<Item> BLUE_MAGNETITE_NUGGET = registerSimple("blue_magnetite_nugget");
     public static final RegistrySupplier<Item> RED_MAGNETITE_INGOT = registerSimple("red_magnetite_ingot");
+    public static final RegistrySupplier<Item> RED_MAGNETITE_NUGGET = registerSimple("red_magnetite_nugget");
     public static final RegistrySupplier<Item> BLUE_ITEM_MAGNET = register("blue_item_magnet",
             () -> new MagnetItem(new Item.Properties()
                     .stacksTo(1)

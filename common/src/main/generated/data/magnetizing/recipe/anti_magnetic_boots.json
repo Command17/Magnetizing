@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "x": {
+      "tag": "c:ingots/magnetite"
+    },
+    "y": {
+      "item": "magnetizing:blue_magnetite_block"
+    },
+    "z": {
+      "item": "magnetizing:red_magnetite_block"
+    }
+  },
+  "pattern": [
+    "x x",
+    "y z"
+  ],
+  "result": {
+    "count": 1,
+    "id": "magnetizing:anti_magnetic_boots"
+  }
+}

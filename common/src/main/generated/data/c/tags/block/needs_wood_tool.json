@@ -1,0 +1,8 @@
+{
+  "values": [
+    {
+      "id": "#magnetizing:block_magnets",
+      "required": false
+    }
+  ]
+}

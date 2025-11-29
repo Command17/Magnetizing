@@ -3,6 +3,7 @@ package com.github.command17.magnetizing.common.block.entity;
 import com.github.command17.magnetizing.common.block.MagneticBlock;
 import com.github.command17.magnetizing.common.item.component.ModItemComponents;
 import com.github.command17.magnetizing.common.util.MagneticPole;
+import com.github.command17.magnetizing.common.util.ModTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.Entity;
@@ -71,7 +72,7 @@ public class MagneticBlockEntity extends BlockEntity {
             return !itemEntity.getItem().has(ModItemComponents.MAGNETIC_RESISTANCE.get());
         }
 
-        return true;
+        return !entity.getType().is(ModTags.EntityTags.UNMOVEABLE_BY_MAGNETS);
     }
 
     public boolean shouldBeMagnetic() {
