@@ -18,9 +18,6 @@
     "main": [
       "com.github.command17.magnetizing.fabric.MagnetizingFabric"
     ],
-    "client": [
-      "com.github.command17.magnetizing.fabric.client.MagnetizingFabricClient"
-    ],
     "fabric-datagen": [
       "com.github.command17.magnetizing.fabric.data.MagnetizingDataGen"
     ]
