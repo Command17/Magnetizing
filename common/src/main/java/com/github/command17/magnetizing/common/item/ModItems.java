@@ -40,21 +40,21 @@ public final class ModItems {
             () -> new MagnetItem(new Item.Properties()
                     .stacksTo(1)
                     .component(ModItemComponents.MAGNET_POLE.get(), MagneticPole.MINUS)
-                    .component(ModItemComponents.MAGNET_FORCE.get(), 0.1)
-                    .component(ModItemComponents.MAX_MAGNET_RANGE.get(), 5)
+                    .component(ModItemComponents.MAGNET_FORCE.get(), Magnetizing.CONFIG.itemMagnetForce.get())
+                    .component(ModItemComponents.MAX_MAGNET_RANGE.get(), Magnetizing.CONFIG.itemMagnetMaxRange.get())
             ));
 
     public static final RegistrySupplier<Item> RED_ITEM_MAGNET = register("red_item_magnet",
             () -> new MagnetItem(new Item.Properties()
                     .stacksTo(1)
                     .component(ModItemComponents.MAGNET_POLE.get(), MagneticPole.PLUS)
-                    .component(ModItemComponents.MAGNET_FORCE.get(), 0.1)
-                    .component(ModItemComponents.MAX_MAGNET_RANGE.get(), 5)
+                    .component(ModItemComponents.MAGNET_FORCE.get(), Magnetizing.CONFIG.itemMagnetForce.get())
+                    .component(ModItemComponents.MAX_MAGNET_RANGE.get(), Magnetizing.CONFIG.itemMagnetMaxRange.get())
             ));
 
     public static final RegistrySupplier<Item> ANTI_MAGNETIC_BOOTS = register("anti_magnetic_boots",
             () -> new ArmorItem(ModArmorMaterials.ANTI_MAGNETIC, ArmorItem.Type.BOOTS, new Item.Properties()
-                    .durability(150)
+                    .durability(Magnetizing.CONFIG.antiMagneticBootsDurability.get())
                     .component(ModItemComponents.MAGNETIC_RESISTANCE.get(), Unit.INSTANCE)
             ));
 

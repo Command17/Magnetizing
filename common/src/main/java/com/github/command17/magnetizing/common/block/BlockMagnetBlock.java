@@ -82,7 +82,7 @@ public class BlockMagnetBlock extends MagneticBlock {
 
     @Override
     public double getMagnetForce(BlockPos pos, BlockState state, LevelAccessor level) {
-        return 0.2;
+        return Magnetizing.CONFIG.blockMagnetForce.get();
     }
 
     @NotNull

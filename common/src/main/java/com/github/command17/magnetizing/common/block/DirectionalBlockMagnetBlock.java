@@ -133,7 +133,7 @@ public class DirectionalBlockMagnetBlock extends DirectionalMagneticBlock {
 
     @Override
     public double getMagnetForce(BlockPos pos, BlockState state, LevelAccessor level) {
-        return 0.2;
+        return Magnetizing.CONFIG.directionalBlockMagnetForce.get();
     }
 
     @NotNull
