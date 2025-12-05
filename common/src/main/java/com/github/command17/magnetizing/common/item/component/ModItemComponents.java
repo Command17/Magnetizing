@@ -26,7 +26,7 @@ public final class ModItemComponents {
             () -> DataComponentType.<Double>builder().persistent(Codec.DOUBLE).build());
 
     public static final RegistrySupplier<DataComponentType<MagneticPole>> MAGNET_POLE = register("magnet_pole",
-            () -> DataComponentType.<MagneticPole>builder().persistent(MagneticPole.CODEC).networkSynchronized(MagneticPole.STREAM_CODEC).build());
+            () -> DataComponentType.<MagneticPole>builder().persistent(MagneticPole.CODEC).build());
 
     public static final RegistrySupplier<DataComponentType<Unit>> MAGNETIC_RESISTANCE = register("magnetic_resistance",
             () -> DataComponentType.<Unit>builder().persistent(Unit.CODEC).build());

@@ -5,7 +5,6 @@ import com.github.command17.magnetizing.common.item.component.ModItemComponents;
 import com.github.command17.magnetizing.common.util.MagneticPole;
 import com.github.command17.magnetizing.common.util.ModTags;
 import net.minecraft.core.BlockPos;
-import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;

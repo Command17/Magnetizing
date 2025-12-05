@@ -4,7 +4,6 @@ import com.github.command17.magnetizing.common.block.entity.MagneticBlockEntity;
 import com.github.command17.magnetizing.common.block.entity.ModBlockEntities;
 import com.github.command17.magnetizing.common.util.MagneticPole;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.particles.DustParticleOptions;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.BaseEntityBlock;
@@ -16,10 +15,8 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.phys.AABB;
-import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.joml.Vector3f;
 
 public abstract class MagneticBlock extends BaseEntityBlock {
     public static final BooleanProperty DISABLED = BooleanProperty.create("disabled");
