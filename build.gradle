@@ -1,7 +1,10 @@
+import me.modmuss50.mpp.ReleaseType
+
 plugins {
     id 'dev.architectury.loom' version '1.11-SNAPSHOT' apply false
     id 'architectury-plugin' version '3.4-SNAPSHOT'
     id 'com.github.johnrengelman.shadow' version '8.1.1' apply false
+    id "me.modmuss50.mod-publish-plugin" version "1.1.0"
 }
 
 architectury {
@@ -121,5 +124,86 @@ subprojects {
             // The repositories here will be used for publishing your artifact, not for
             // retrieving dependencies.
         }
+    }
+}
+
+publishMods {
+    def fabricProject = project(":fabric")
+    def neoforgeProject = project(":neoforge")
+    def supportedMcVersions = supported_minecraft_versions.split(",")
+    def modrinthOptions = modrinthOptions {
+        accessToken = providers.environmentVariable("MODRINTH_TOKEN")
+        minecraftVersions.addAll(supportedMcVersions)
+        projectId = "WUkCTkrV"
+
+        // Architectury
+        requires {
+            id = "lhGA9TYQ"
+        }
+    }
+
+    def curseforgeOptions = curseforgeOptions {
+        accessToken = providers.environmentVariable("CURSEFORGE_TOKEN")
+        clientRequired = true
+        serverRequired = true
+        javaVersions.add(JavaVersion.VERSION_21)
+        minecraftVersions.addAll(supportedMcVersions)
+        projectId = ""
+
+        // Architectury
+        requires("architectury-api")
+
+        // Configured
+        optional("configured")
+    }
+
+    displayName = "Magnetizing v${project.version}"
+    changelog = rootProject.file("Changelog.md").text
+    type = ReleaseType.of(release_type)
+
+    modrinth("modrinthFabric") {
+        from modrinthOptions
+        file fabricProject
+        modLoaders.addAll("fabric", "quilt")
+
+        // Fabric API
+        requires {
+            id = "P7dR8mSH"
+        }
+
+        // Forge Config API Port
+        requires {
+            id = "ohNO6lps"
+        }
+    }
+
+    curseforge("curseforgeFabric") {
+        from curseforgeOptions
+        file fabricProject
+        modLoaders.addAll("fabric", "quilt")
+
+        // Fabric API, Forge Config API Port
+        requires("fabric-api", "forge-config-api-port-fabric")
+    }
+
+    modrinth("modrinthNeoForge") {
+        from modrinthOptions
+        file neoforgeProject
+        modLoaders.add("neoforge")
+    }
+
+    curseforge("curseforgeNeoForge") {
+        from curseforgeOptions
+        file neoforgeProject
+        modLoaders.add("neoforge")
+    }
+
+    github {
+        accessToken = providers.environmentVariable("GITHUB_TOKEN")
+        repository = "Command17/Magnetizing"
+        commitish = branch
+        tagName = project.version
+        file fabricProject
+        file neoforgeProject
     }
 }
