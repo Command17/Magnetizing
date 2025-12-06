@@ -148,7 +148,7 @@ publishMods {
         serverRequired = true
         javaVersions.add(JavaVersion.VERSION_21)
         minecraftVersions.addAll(supportedMcVersions)
-        projectId = ""
+        projectId = "1399086"
 
         // Architectury
         requires("architectury-api")
