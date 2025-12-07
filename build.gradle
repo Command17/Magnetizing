@@ -203,7 +203,8 @@ publishMods {
         repository = "Command17/Magnetizing"
         commitish = branch
         tagName = project.version
-        file fabricProject
-        file neoforgeProject
+
+        additionalFile(fabricProject)
+        additionalFile(neoforgeProject)
     }
 }
