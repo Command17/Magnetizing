@@ -175,6 +175,11 @@ publishMods {
         requires {
             id = "ohNO6lps"
         }
+
+        // Architectury
+        requires {
+            id = "lhGA9TYQ"
+        }
     }
 
     curseforge("curseforgeFabric") {
@@ -182,8 +187,8 @@ publishMods {
         file fabricProject
         modLoaders.addAll("fabric", "quilt")
 
-        // Fabric API, Forge Config API Port
-        requires("fabric-api", "forge-config-api-port-fabric")
+        // Fabric API, Forge Config API Port, Architectury
+        requires("fabric-api", "forge-config-api-port-fabric", "architectury-api")
     }
 
     modrinth("modrinthNeoForge") {
