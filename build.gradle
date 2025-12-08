@@ -135,11 +135,6 @@ publishMods {
         accessToken = providers.environmentVariable("MODRINTH_TOKEN")
         minecraftVersions.addAll(supportedMcVersions)
         projectId = "WUkCTkrV"
-
-        // Architectury
-        requires {
-            id = "lhGA9TYQ"
-        }
     }
 
     def curseforgeOptions = curseforgeOptions {
@@ -149,12 +144,6 @@ publishMods {
         javaVersions.add(JavaVersion.VERSION_21)
         minecraftVersions.addAll(supportedMcVersions)
         projectId = "1399086"
-
-        // Architectury
-        requires("architectury-api")
-
-        // Configured
-        optional("configured")
     }
 
     displayName = "Magnetizing v${project.version}"
@@ -195,12 +184,23 @@ publishMods {
         from modrinthOptions
         file neoforgeProject
         modLoaders.add("neoforge")
+
+        // Architectury
+        requires {
+            id = "lhGA9TYQ"
+        }
     }
 
     curseforge("curseforgeNeoForge") {
         from curseforgeOptions
         file neoforgeProject
         modLoaders.add("neoforge")
+
+        // Architectury
+        requires("architectury-api")
+
+        // Configured
+        optional("configured")
     }
 
     github {

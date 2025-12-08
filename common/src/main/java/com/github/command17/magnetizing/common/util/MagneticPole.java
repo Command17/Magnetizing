@@ -10,8 +10,8 @@ import org.jetbrains.annotations.NotNull;
 import java.util.function.IntFunction;
 
 public enum MagneticPole implements StringRepresentable {
-    PLUS(0, "plus") /* ATTRACTS */,
-    MINUS(1, "minus") /* REPELS */;
+    POSITIVE(0, "positive") /* ATTRACTS */,
+    NEGATIVE(1, "negative") /* REPELS */;
 
     private static final IntFunction<MagneticPole> BY_ID = ByIdMap.continuous(MagneticPole::getId, values(), ByIdMap.OutOfBoundsStrategy.ZERO);
     public static final StreamCodec<ByteBuf, MagneticPole> STREAM_CODEC = ByteBufCodecs.idMapper(BY_ID, MagneticPole::getId);

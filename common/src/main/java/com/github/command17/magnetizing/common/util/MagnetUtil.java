@@ -9,11 +9,11 @@ import org.joml.Vector3f;
 public final class MagnetUtil {
     private MagnetUtil() {}
 
-    public static final Vector3f MINUS_COLOR_V3F = Vec3.fromRGB24(0x4903fc).toVector3f();
-    public static final Vector3f PLUS_COLOR_V3F = DustParticleOptions.REDSTONE_PARTICLE_COLOR;
+    public static final Vector3f NEGATIVE_COLOR_V3F = Vec3.fromRGB24(0x4903fc).toVector3f();
+    public static final Vector3f POSITIVE_COLOR_V3F = DustParticleOptions.REDSTONE_PARTICLE_COLOR;
 
     public static Vector3f getColorBasedOnPole(MagneticPole pole) {
-        return pole == MagneticPole.PLUS ? PLUS_COLOR_V3F : MINUS_COLOR_V3F;
+        return pole == MagneticPole.POSITIVE ? POSITIVE_COLOR_V3F : NEGATIVE_COLOR_V3F;
     }
 
     public static void showBoxParticlesServerSide(ServerLevel level, Vec3 pos, double range, MagneticPole pole) {

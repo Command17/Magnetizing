@@ -30,14 +30,14 @@ public final class ModBlocks {
             () -> Properties.ofFullCopy(Blocks.IRON_BLOCK));
 
     public static final RegistrySupplier<Block> BLUE_MAGNETITE_BLOCK = register("blue_magnetite_block",
-            () -> new MagneticMagnetiteBlock(MagneticPole.MINUS, Properties.ofFullCopy(MAGNETITE_BLOCK.get())));
+            () -> new MagneticMagnetiteBlock(MagneticPole.NEGATIVE, Properties.ofFullCopy(MAGNETITE_BLOCK.get())));
 
     public static final RegistrySupplier<Block> RED_MAGNETITE_BLOCK = register("red_magnetite_block",
-            () -> new MagneticMagnetiteBlock(MagneticPole.PLUS, Properties.ofFullCopy(MAGNETITE_BLOCK.get())));
+            () -> new MagneticMagnetiteBlock(MagneticPole.POSITIVE, Properties.ofFullCopy(MAGNETITE_BLOCK.get())));
 
     public static final RegistrySupplier<Block> BLUE_DIRECTIONAL_BLOCK_MAGNET = register("blue_directional_block_magnet",
             () -> new DirectionalBlockMagnetBlock(
-                    MagneticPole.MINUS,
+                    MagneticPole.NEGATIVE,
                     Properties.of()
                         .mapColor(MapColor.STONE)
                         .instrument(NoteBlockInstrument.BASEDRUM)
@@ -46,13 +46,13 @@ public final class ModBlocks {
             ));
 
     public static final RegistrySupplier<Block> RED_DIRECTIONAL_BLOCK_MAGNET = register("red_directional_block_magnet",
-            () -> new DirectionalBlockMagnetBlock(MagneticPole.PLUS, Properties.ofFullCopy(BLUE_DIRECTIONAL_BLOCK_MAGNET.get())));
+            () -> new DirectionalBlockMagnetBlock(MagneticPole.POSITIVE, Properties.ofFullCopy(BLUE_DIRECTIONAL_BLOCK_MAGNET.get())));
 
     public static final RegistrySupplier<Block> BLUE_BLOCK_MAGNET = register("blue_block_magnet",
-            () -> new BlockMagnetBlock(MagneticPole.MINUS, Properties.ofFullCopy(BLUE_DIRECTIONAL_BLOCK_MAGNET.get())));
+            () -> new BlockMagnetBlock(MagneticPole.NEGATIVE, Properties.ofFullCopy(BLUE_DIRECTIONAL_BLOCK_MAGNET.get())));
 
     public static final RegistrySupplier<Block> RED_BLOCK_MAGNET = register("red_block_magnet",
-            () -> new BlockMagnetBlock(MagneticPole.PLUS, Properties.ofFullCopy(BLUE_DIRECTIONAL_BLOCK_MAGNET.get())));
+            () -> new BlockMagnetBlock(MagneticPole.POSITIVE, Properties.ofFullCopy(BLUE_DIRECTIONAL_BLOCK_MAGNET.get())));
 
     private static RegistrySupplier<Block> registerSimple(String id, Supplier<Properties> sup) {
         return register(id, () -> new Block(sup.get()));

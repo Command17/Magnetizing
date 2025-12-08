@@ -39,7 +39,7 @@ public final class ModItems {
     public static final RegistrySupplier<Item> BLUE_ITEM_MAGNET = register("blue_item_magnet",
             () -> new MagnetItem(new Item.Properties()
                     .stacksTo(1)
-                    .component(ModItemComponents.MAGNET_POLE.get(), MagneticPole.MINUS)
+                    .component(ModItemComponents.MAGNET_POLE.get(), MagneticPole.NEGATIVE)
                     .component(ModItemComponents.MAGNET_FORCE.get(), Magnetizing.CONFIG.itemMagnetForce.get())
                     .component(ModItemComponents.MAX_MAGNET_RANGE.get(), Magnetizing.CONFIG.itemMagnetMaxRange.get())
             ));
@@ -47,7 +47,7 @@ public final class ModItems {
     public static final RegistrySupplier<Item> RED_ITEM_MAGNET = register("red_item_magnet",
             () -> new MagnetItem(new Item.Properties()
                     .stacksTo(1)
-                    .component(ModItemComponents.MAGNET_POLE.get(), MagneticPole.PLUS)
+                    .component(ModItemComponents.MAGNET_POLE.get(), MagneticPole.POSITIVE)
                     .component(ModItemComponents.MAGNET_FORCE.get(), Magnetizing.CONFIG.itemMagnetForce.get())
                     .component(ModItemComponents.MAX_MAGNET_RANGE.get(), Magnetizing.CONFIG.itemMagnetMaxRange.get())
             ));

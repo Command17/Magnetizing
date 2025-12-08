@@ -34,7 +34,7 @@ public class MagneticBlockEntity extends BlockEntity {
         if (this.shouldBeMagnetic()) {
             MagneticPole pole = this.getPole();
             AABB bounds = this.getMagnetBounds();
-            double force = pole == MagneticPole.PLUS ? this.getMagnetForce(): -this.getMagnetForce();
+            double force = pole == MagneticPole.POSITIVE ? this.getMagnetForce(): -this.getMagnetForce();
             List<Entity> entities = level.getEntities((Entity) null, bounds, this::canAffectEntity);
             for (Entity entity: entities) {
                 Vec3 direction = pos.getCenter().subtract(entity.position()).normalize();

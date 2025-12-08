@@ -23,7 +23,7 @@ public class MagnetItem extends Item {
     public static final double DEFAULT_MAGNET_FORCE = 0.05;
     public static final int DEFAULT_MAX_MAGNET_RANGE = 10;
     public static final int DEFAULT_MAGNET_RANGE = 1;
-    public static final MagneticPole DEFAULT_MAGNETIC_POLE = MagneticPole.MINUS;
+    public static final MagneticPole DEFAULT_MAGNETIC_POLE = MagneticPole.NEGATIVE;
 
     public MagnetItem(Properties properties) {
         super(properties);
