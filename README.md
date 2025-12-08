@@ -11,8 +11,8 @@
 
 ## About 📖
 
-This mod adds blocks and items related to magnets. These can be used as to make
-farming easier, create new redstone contraptions or just to annoy your friends!
+This mod adds blocks and items related to magnets. These can be used to make
+farming easier, create new redstone contraptions or simply to annoy your friends!
 
 Magnets are made by a new ore:
 
@@ -20,18 +20,18 @@ Magnets are made by a new ore:
 
 **Magnetite!**
 
-Magnetite ore generates similar to iron ore, it's the one of the key materials needed to make magnets.
-Yet you can't just use magnetite ingots to make magnets, as they are not
+Magnetite ore generates similarly to iron ore. It's the one of the key materials needed to make magnets.
+However, you can't just use magnetite ingots to make magnets, as they are not
 magnetic **...for now!**
 
 If you add some **lapis lazuli** or **redstone** to a **magnetite ingot** you get:
 
 ![blue_and_red_magnetite](assets/blue_and_red_magnetite.png)
 
-**Blue** and **red magnetite**, ...and now they're magnetic!
+**Blue** and **red magnetite** ...now they're magnetic!
 
-**Blue magnetite** has a **minus pole**, this means it'll repel entities
-and **red magnetite** has a **plus pole**, it attracts entities!
+**Blue magnetite** has a **negative pole**, which means it'll repel entities.
+**Red magnetite** has a **positive pole**. It attracts entities!
 
 ![blue_magnetite_gif](assets/blue_magnetite_gif.gif)
 ![red_magnetite_gif](assets/red_magnetite_gif.gif)
@@ -50,14 +50,14 @@ The range can be changed by right-clicking the block.
 ![directional_block_magnet_showcase](assets/directional_block_magnet_sc.gif)
 
 These magnets attract/repel entities in a line up to 10 blocks long in only one direction.
-You can yet again change the range by right-clicking the block.
+You can, yet again, change the range by right-clicking the block.
 
 ### Item Magnets
 
 ![blue_item_magnet_showcase](assets/blue_item_magnet_sc.gif)
 ![red_item_magnet_showcase](assets/red_item_magnet_sc.gif)
 
-Item magnets fit in inventory and are perfect for picking up many items on the ground or pushing them away.
+Item magnets fit in your inventory and are perfect for picking up many items on the ground or pushing them away.
 They work similar to block magnets, but only attract/repel items from the ground.
 
 The range can be changed by sneaking and right-clicking with the item.
