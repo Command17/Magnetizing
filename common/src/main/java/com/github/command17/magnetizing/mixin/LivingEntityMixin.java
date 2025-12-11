@@ -50,7 +50,7 @@ public abstract class LivingEntityMixin extends Entity {
             Vec3 pos = this.position().add(0, 1, 0);
             MagneticPole pole = magnetStack.get(ModItemComponents.MAGNET_POLE.get());
             double baseForce = magnetStack.has(ModItemComponents.MAGNET_FORCE.get()) ? magnetStack.get(ModItemComponents.MAGNET_FORCE.get()) : MagnetItem.DEFAULT_MAGNET_FORCE;
-            double force = pole == MagneticPole.PLUS ? baseForce : -baseForce;
+            double force = pole == MagneticPole.POSITIVE ? baseForce : -baseForce;
             int range = magnetStack.has(ModItemComponents.MAGNET_RANGE.get()) ? magnetStack.get(ModItemComponents.MAGNET_RANGE.get()) : MagnetItem.DEFAULT_MAGNET_RANGE;
             List<Entity> entities = this.level().getEntities((Entity) null, BASE_MAGNET_AABB.move(pos).inflate(range), MagnetItem::magneticEntityPredicate);
             for (Entity entity: entities) {
