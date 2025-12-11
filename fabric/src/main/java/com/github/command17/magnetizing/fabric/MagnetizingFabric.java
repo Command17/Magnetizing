@@ -1,7 +1,6 @@
 package com.github.command17.magnetizing.fabric;
 
 import com.github.command17.magnetizing.Magnetizing;
-import com.github.command17.magnetizing.fabric.worldgen.ModFabricOreGen;
 import fuzs.forgeconfigapiport.fabric.api.neoforge.v4.NeoForgeConfigRegistry;
 import net.fabricmc.api.ModInitializer;
 import net.neoforged.fml.config.ModConfig;
@@ -11,6 +10,5 @@ public final class MagnetizingFabric implements ModInitializer {
     public void onInitialize() {
         NeoForgeConfigRegistry.INSTANCE.register(Magnetizing.MOD_ID, ModConfig.Type.STARTUP, Magnetizing.CONFIG_SPEC);
         Magnetizing.init();
-        ModFabricOreGen.register();
     }
 }

@@ -6,7 +6,10 @@ import com.github.command17.magnetizing.common.item.ModArmorMaterials;
 import com.github.command17.magnetizing.common.item.ModItems;
 import com.github.command17.magnetizing.common.item.component.ModItemComponents;
 import com.github.command17.magnetizing.common.item.tab.ModCreativeModeTabs;
+import com.github.command17.magnetizing.common.worldgen.ModOreGen;
 import com.github.command17.magnetizing.config.ModConfig;
+import dev.architectury.event.events.common.LifecycleEvent;
+import dev.architectury.platform.Platform;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.resources.ResourceLocation;
@@ -28,7 +31,17 @@ public final class Magnetizing {
         ModItems.register();
         ModBlockEntities.register();
         ModCreativeModeTabs.register();
+        if (Platform.isNeoForge()) {
+            LifecycleEvent.SETUP.register(Magnetizing::onSetup);
+        } else {
+            onSetup();
+        }
+
         LOGGER.info("Initialized.");
+    }
+
+    private static void onSetup() {
+        ModOreGen.register();
     }
 
     public static ResourceLocation resource(String path) {
