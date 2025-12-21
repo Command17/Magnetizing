@@ -1,0 +1,36 @@
+{
+  "item.magnetizing.raw_magnetite": "Rohmagnetit",
+  "item.magnetizing.magnetite_ingot": "Magnetitbarren",
+  "item.magnetizing.blue_magnetite_ingot": "Blauer Magnetitbarren",
+  "item.magnetizing.red_magnetite_ingot": "Roter Magnetitbarren",
+  "item.magnetizing.blue_item_magnet": "Blauer Gegendstandsmagnet",
+  "item.magnetizing.red_item_magnet": "Roter Gegendstandsmagnet",
+  "item.magnetizing.anti_magnetic_boots": "Antimagnetische Stiefel",
+  "item.magnetizing.magnetite_nugget": "Magnetitklumpen",
+  "item.magnetizing.blue_magnetite_nugget": "Blauer Magnetitklumpen",
+  "item.magnetizing.red_magnetite_nugget": "Roter Magnetitklumpen",
+
+  "block.magnetizing.magnetite_ore": "Magnetiterz",
+  "block.magnetizing.deepslate_magnetite_ore": "Tiefenschiefer-Magnetiterz",
+  "block.magnetizing.raw_magnetite_block": "Rohmagnetitblock",
+  "block.magnetizing.magnetite_block": "Magnetitblock",
+  "block.magnetizing.blue_magnetite_block": "Blauer Magnetitblock",
+  "block.magnetizing.red_magnetite_block": "Roter Magnetitblock",
+  "block.magnetizing.blue_directional_block_magnet": "Blauer gerichteter Blockmagnet",
+  "block.magnetizing.red_directional_block_magnet": "Roter gerichteter Blockmagnet",
+  "block.magnetizing.blue_block_magnet": "Blauer Blockmagnet",
+  "block.magnetizing.red_block_magnet": "Roter Blockmagnet",
+
+  "itemGroup.magnetizing.main": "Magnetizing",
+
+  "message.magnetizing.magnetic_range": "Magnetische Reichweite wurde auf %s Blöcke gesetzt",
+
+  "tag.item.magnetizing.item_magnets": "Gegendstandsmagnete",
+  "tag.item.magnetizing.block_magnets": "Blockmagnete",
+  "tag.item.c.ingots.magnetite": "Magnetitbarren",
+  "tag.item.c.nuggets.magnetite": "Magnetitklumpen",
+  "tag.item.c.ores.magnetite": "Magnetiterze",
+  "tag.item.c.raw_blocks.magnetite": "Rohe Magnetitblöcke",
+  "tag.item.c.storage_blocks.magnetite": "Magnetitlagerblöcke",
+  "tag.item.c.storage_blocks.raw_magnetite": "Rohmagnetitlagerblöcke"
+}
