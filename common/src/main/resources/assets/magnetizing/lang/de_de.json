@@ -23,7 +23,7 @@
 
   "itemGroup.magnetizing.main": "Magnetizing",
 
-  "message.magnetizing.magnetic_range": "Magnetische Reichweite wurde auf %s Blöcke gesetzt",
+  "message.magnetizing.magnetic_range": "Reichweite ist auf %s Blöcke gesetzt",
 
   "tag.item.magnetizing.item_magnets": "Gegendstandsmagnete",
   "tag.item.magnetizing.block_magnets": "Blockmagnete",
