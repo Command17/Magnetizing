@@ -8,7 +8,7 @@ import net.neoforged.fml.config.ModConfig;
 @Mod(Magnetizing.MOD_ID)
 public final class MagnetizingNeoForge {
     public MagnetizingNeoForge(ModContainer modContainer) {
-        modContainer.registerConfig(ModConfig.Type.STARTUP, Magnetizing.CONFIG_SPEC);
+        modContainer.registerConfig(ModConfig.Type.STARTUP, Magnetizing.CONFIG_SPEC, "magnetizing-config.toml");
         Magnetizing.init();
     }
 }

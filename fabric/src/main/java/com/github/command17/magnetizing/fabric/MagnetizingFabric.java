@@ -8,7 +8,7 @@ import net.neoforged.fml.config.ModConfig;
 public final class MagnetizingFabric implements ModInitializer {
     @Override
     public void onInitialize() {
-        NeoForgeConfigRegistry.INSTANCE.register(Magnetizing.MOD_ID, ModConfig.Type.STARTUP, Magnetizing.CONFIG_SPEC);
+        NeoForgeConfigRegistry.INSTANCE.register(Magnetizing.MOD_ID, ModConfig.Type.STARTUP, Magnetizing.CONFIG_SPEC, "magnetizing-config.toml");
         Magnetizing.init();
     }
 }
