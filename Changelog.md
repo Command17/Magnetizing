@@ -2,4 +2,5 @@
 
 **Changelog:**
 - Refactored some internal code
+- Changed config name from *magnetizing-startup.toml* to *magnetizing-config.toml*
 - Added German (*de_de*) translation
