@@ -2,8 +2,6 @@ package com.github.command17.magnetizing.config;
 
 import net.neoforged.neoforge.common.ModConfigSpec;
 
-import java.util.List;
-
 public class ModConfig {
     // Block Magnets
     public final ModConfigSpec.ConfigValue<Double> blockMagnetForce;

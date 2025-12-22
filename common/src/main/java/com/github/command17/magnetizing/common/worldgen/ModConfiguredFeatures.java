@@ -20,12 +20,12 @@ public final class ModConfiguredFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> MAGNETITE_SMALL_ORE_KEY = registryKey("magnetite_small_ore");
 
     public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> context) {
-        RuleTest stoneReplaceables = new TagMatchTest(BlockTags.STONE_ORE_REPLACEABLES);
-        RuleTest deepslateReplaceables = new TagMatchTest(BlockTags.DEEPSLATE_ORE_REPLACEABLES);
+        RuleTest stoneReplaceable = new TagMatchTest(BlockTags.STONE_ORE_REPLACEABLES);
+        RuleTest deepslateReplaceable = new TagMatchTest(BlockTags.DEEPSLATE_ORE_REPLACEABLES);
 
         List<OreConfiguration.TargetBlockState> magnetiteOres = List.of(
-                OreConfiguration.target(stoneReplaceables, ModBlocks.MAGNETITE_ORE.get().defaultBlockState()),
-                OreConfiguration.target(deepslateReplaceables, ModBlocks.DEEPSLATE_MAGNETITE_ORE.get().defaultBlockState())
+                OreConfiguration.target(stoneReplaceable, ModBlocks.MAGNETITE_ORE.get().defaultBlockState()),
+                OreConfiguration.target(deepslateReplaceable, ModBlocks.DEEPSLATE_MAGNETITE_ORE.get().defaultBlockState())
         );
 
         register(context, MAGNETITE_ORE_KEY, Feature.ORE, new OreConfiguration(magnetiteOres, 7));
