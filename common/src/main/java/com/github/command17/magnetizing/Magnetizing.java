@@ -31,17 +31,13 @@ public final class Magnetizing {
         ModItems.register();
         ModBlockEntities.register();
         ModCreativeModeTabs.register();
-        if (Platform.isNeoForge()) {
-            LifecycleEvent.SETUP.register(Magnetizing::onSetup);
-        } else {
-            onSetup();
+
+        // For some reason it doesn't work on NeoForge???
+        if (!Platform.isNeoForge()) {
+            ModOreGen.register();
         }
 
         LOGGER.info("Initialized.");
-    }
-
-    private static void onSetup() {
-        ModOreGen.register();
     }
 
     public static ResourceLocation resource(String path) {
