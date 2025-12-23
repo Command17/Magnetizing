@@ -177,7 +177,7 @@ publishMods {
         modLoaders.addAll("fabric", "quilt")
 
         // Fabric API, Forge Config API Port, Architectury
-        requires("fabric-api", "forge-config-api-port-fabric", "architectury-api")
+        requires("fabric-api", "forge-config-api-port", "architectury-api")
     }
 
     modrinth("modrinthNeoForge") {
