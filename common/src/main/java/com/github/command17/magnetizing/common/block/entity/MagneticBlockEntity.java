@@ -50,9 +50,7 @@ public class MagneticBlockEntity extends BlockEntity {
 
     public boolean canAffectEntity(Entity entity) {
         if (entity instanceof LivingEntity livingEntity) {
-            Iterator<ItemStack> iterator = livingEntity.getArmorSlots().iterator();
-            do {
-                ItemStack stack = iterator.next();
+            for (ItemStack stack: livingEntity.getArmorSlots()) {
                 if (stack.has(ModItemComponents.MAGNETIC_RESISTANCE.get())) {
                     // Damage boots
                     if (stack.isDamageableItem() && this.level.getGameTime() % 400 == 0) {
@@ -62,7 +60,7 @@ public class MagneticBlockEntity extends BlockEntity {
 
                     return false;
                 }
-            } while (iterator.hasNext());
+            }
 
             if (livingEntity instanceof Player player) {
                 return !player.getAbilities().flying;
