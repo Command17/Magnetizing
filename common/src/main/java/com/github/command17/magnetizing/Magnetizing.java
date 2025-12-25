@@ -8,7 +8,6 @@ import com.github.command17.magnetizing.common.item.component.ModItemComponents;
 import com.github.command17.magnetizing.common.item.tab.ModCreativeModeTabs;
 import com.github.command17.magnetizing.common.worldgen.ModOreGen;
 import com.github.command17.magnetizing.config.ModConfig;
-import dev.architectury.event.events.common.LifecycleEvent;
 import dev.architectury.platform.Platform;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
