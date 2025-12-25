@@ -18,8 +18,10 @@ import net.minecraft.world.level.block.BaseEntityBlock;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
+import net.minecraft.world.level.redstone.Orientation;
 import net.minecraft.world.phys.BlockHitResult;
-import org.jetbrains.annotations.NotNull;
+import org.jspecify.annotations.NonNull;
+import org.jspecify.annotations.Nullable;
 
 public class BlockMagnetBlock extends MagneticBlock {
     public static final MapCodec<BlockMagnetBlock> CODEC = RecordCodecBuilder.mapCodec(
@@ -36,10 +38,10 @@ public class BlockMagnetBlock extends MagneticBlock {
         this.registerDefaultState(this.defaultBlockState().setValue(DISABLED, false).setValue(RANGE5, 1));
     }
 
-    @NotNull
+    @NonNull
     @Override
-    protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hitResult) {
-        if (!level.isClientSide) {
+    protected InteractionResult useWithoutItem(@NonNull BlockState state, Level level, @NonNull BlockPos pos, @NonNull Player player, @NonNull BlockHitResult hitResult) {
+        if (!level.isClientSide()) {
             int range = state.getValue(RANGE5);
             if (!player.isShiftKeyDown()) {
                 BlockState newState = state.cycle(RANGE5);
@@ -61,8 +63,8 @@ public class BlockMagnetBlock extends MagneticBlock {
     }
 
     @Override
-    protected void neighborChanged(BlockState state, Level level, BlockPos pos, Block neighborBlock, BlockPos neighborPos, boolean movedByPiston) {
-        if (!level.isClientSide) {
+    protected void neighborChanged(@NonNull BlockState state, Level level, @NonNull BlockPos pos, @NonNull Block neighborBlock, @Nullable Orientation orientation, boolean movedByPiston) {
+        if (!level.isClientSide()) {
             boolean disabled = state.getValue(DISABLED);
             if (disabled != level.hasNeighborSignal(pos)) {
                 level.setBlock(pos, state.cycle(DISABLED), 2);
@@ -85,18 +87,18 @@ public class BlockMagnetBlock extends MagneticBlock {
         return Magnetizing.CONFIG.blockMagnetForce.get();
     }
 
-    @NotNull
+    @NonNull
     public MagneticPole getStaticPole() {
         return this.pole;
     }
 
-    @NotNull
+    @NonNull
     @Override
     public MagneticPole getPole(BlockPos pos, BlockState state, LevelAccessor level) {
         return this.getStaticPole();
     }
 
-    @NotNull
+    @NonNull
     @Override
     protected MapCodec<? extends BaseEntityBlock> codec() {
         return CODEC;

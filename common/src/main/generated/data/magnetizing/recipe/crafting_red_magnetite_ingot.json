@@ -2,15 +2,9 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "item": "minecraft:redstone"
-    },
-    {
-      "item": "minecraft:redstone"
-    },
-    {
-      "item": "magnetizing:magnetite_ingot"
-    }
+    "minecraft:redstone",
+    "minecraft:redstone",
+    "magnetizing:magnetite_ingot"
   ],
   "result": {
     "count": 2,

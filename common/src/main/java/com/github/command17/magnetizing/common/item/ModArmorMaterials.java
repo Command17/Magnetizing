@@ -1,49 +1,26 @@
 package com.github.command17.magnetizing.common.item;
 
 import com.github.command17.magnetizing.Magnetizing;
-import dev.architectury.registry.registries.DeferredRegister;
-import dev.architectury.registry.registries.RegistrySupplier;
-import net.minecraft.Util;
-import net.minecraft.core.Holder;
-import net.minecraft.core.registries.Registries;
-import net.minecraft.sounds.SoundEvent;
+import com.google.common.collect.Maps;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.sounds.SoundEvents;
-import net.minecraft.world.item.ArmorItem;
-import net.minecraft.world.item.ArmorMaterial;
-import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.tags.ItemTags;
+import net.minecraft.world.item.equipment.ArmorMaterial;
+import net.minecraft.world.item.equipment.ArmorType;
+import net.minecraft.world.item.equipment.EquipmentAsset;
+import net.minecraft.world.item.equipment.EquipmentAssets;
 
-import java.util.EnumMap;
-import java.util.List;
-import java.util.function.Supplier;
+import java.util.Map;
 
 public final class ModArmorMaterials {
-    private static final DeferredRegister<ArmorMaterial> REGISTRY = DeferredRegister.create(Magnetizing.MOD_ID, Registries.ARMOR_MATERIAL);
+    public static final ResourceKey<EquipmentAsset> ANTI_MAGNETIC_EQUIPMENT_ASSET = createEquipmentAsset("anti_magnetic");
+    public static final ArmorMaterial ANTI_MAGNETIC = new ArmorMaterial(15, makeDefense(2, 5, 6, 2, 5), 9, SoundEvents.ARMOR_EQUIP_IRON, 0.0F, 0.0F, ItemTags.REPAIRS_IRON_ARMOR, ANTI_MAGNETIC_EQUIPMENT_ASSET);
 
-    public static final RegistrySupplier<ArmorMaterial> ANTI_MAGNETIC = register("anti_magnetic", Util.make(new EnumMap<>(ArmorItem.Type.class), (attribute) -> {
-        attribute.put(ArmorItem.Type.BOOTS, 2);
-        attribute.put(ArmorItem.Type.LEGGINGS, 5);
-        attribute.put(ArmorItem.Type.CHESTPLATE, 6);
-        attribute.put(ArmorItem.Type.HELMET, 2);
-        attribute.put(ArmorItem.Type.BODY, 5);
-    }), 9, SoundEvents.ARMOR_EQUIP_IRON, 0, 0, () -> Ingredient.of(ModItems.MAGNETITE_INGOT.get()));
-
-    private static RegistrySupplier<ArmorMaterial> register(String id, EnumMap<ArmorItem.Type, Integer> defense, int enchantmentValue, Holder<SoundEvent> equipSound, float toughness, float knockbackResistance, Supplier<Ingredient> repairIngredient) {
-        EnumMap<ArmorItem.Type, Integer> enumMap = new EnumMap<>(ArmorItem.Type.class);
-        for(ArmorItem.Type type: ArmorItem.Type.values()) {
-            enumMap.put(type, defense.get(type));
-        }
-
-        List<ArmorMaterial.Layer> layers = List.of(new ArmorMaterial.Layer(Magnetizing.resource(id)));
-        return register(id,
-                () -> new ArmorMaterial(enumMap, enchantmentValue, equipSound, repairIngredient, layers, toughness, knockbackResistance));
+    private static ResourceKey<EquipmentAsset> createEquipmentAsset(String id) {
+        return ResourceKey.create(EquipmentAssets.ROOT_ID, Magnetizing.resource(id));
     }
 
-    private static RegistrySupplier<ArmorMaterial> register(String id, Supplier<ArmorMaterial> sup) {
-        return REGISTRY.register(id, sup);
-    }
-
-    public static void register() {
-        REGISTRY.register();
-        Magnetizing.LOGGER.info("Registered Armor Materials.");
+    private static Map<ArmorType, Integer> makeDefense(int boots, int leggings, int chestplate, int helmet, int body) {
+        return Maps.newEnumMap(Map.of(ArmorType.BOOTS, boots, ArmorType.LEGGINGS, leggings, ArmorType.CHESTPLATE, chestplate, ArmorType.HELMET, helmet, ArmorType.BODY, body));
     }
 }

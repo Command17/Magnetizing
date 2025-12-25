@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "item": "magnetizing:raw_magnetite_block"
-    }
+    "magnetizing:raw_magnetite_block"
   ],
   "result": {
     "count": 9,

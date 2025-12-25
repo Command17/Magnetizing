@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "item": "magnetizing:blue_magnetite_ingot"
-    }
+    "magnetizing:blue_magnetite_ingot"
   ],
   "result": {
     "count": 9,

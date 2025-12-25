@@ -7,6 +7,7 @@ import com.github.command17.magnetizing.common.util.ModTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.EquipmentSlotGroup;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
@@ -18,7 +19,6 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 
-import java.util.Iterator;
 import java.util.List;
 
 public class MagneticBlockEntity extends BlockEntity {
@@ -50,19 +50,21 @@ public class MagneticBlockEntity extends BlockEntity {
 
     public boolean canAffectEntity(Entity entity) {
         if (entity instanceof LivingEntity livingEntity) {
-            Iterator<ItemStack> iterator = livingEntity.getArmorSlots().iterator();
-            do {
-                ItemStack stack = iterator.next();
+            for (EquipmentSlot slot: EquipmentSlotGroup.ARMOR) {
+                if (slot.getType() != EquipmentSlot.Type.HUMANOID_ARMOR) {
+                    continue;
+                }
+
+                ItemStack stack = livingEntity.getItemBySlot(slot);
                 if (stack.has(ModItemComponents.MAGNETIC_RESISTANCE.get())) {
                     // Damage boots
                     if (stack.isDamageableItem() && this.level.getGameTime() % 400 == 0) {
-                        EquipmentSlot slot = livingEntity.getEquipmentSlotForItem(stack);
                         stack.hurtAndBreak(1, livingEntity, slot);
                     }
 
                     return false;
                 }
-            } while (iterator.hasNext());
+            }
 
             if (livingEntity instanceof Player player) {
                 return !player.getAbilities().flying;

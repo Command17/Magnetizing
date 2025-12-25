@@ -5,6 +5,7 @@ import com.github.command17.magnetizing.common.util.MagneticPole;
 import dev.architectury.registry.registries.DeferredRegister;
 import dev.architectury.registry.registries.RegistrySupplier;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
@@ -30,36 +31,46 @@ public final class ModBlocks {
             () -> Properties.ofFullCopy(Blocks.IRON_BLOCK));
 
     public static final RegistrySupplier<Block> BLUE_MAGNETITE_BLOCK = register("blue_magnetite_block",
-            () -> new MagneticMagnetiteBlock(MagneticPole.NEGATIVE, Properties.ofFullCopy(MAGNETITE_BLOCK.get())));
+            () -> new MagneticMagnetiteBlock(MagneticPole.NEGATIVE, Properties.ofFullCopy(MAGNETITE_BLOCK.get())
+                    .setId(key("blue_magnetite_block"))));
 
     public static final RegistrySupplier<Block> RED_MAGNETITE_BLOCK = register("red_magnetite_block",
-            () -> new MagneticMagnetiteBlock(MagneticPole.POSITIVE, Properties.ofFullCopy(MAGNETITE_BLOCK.get())));
+            () -> new MagneticMagnetiteBlock(MagneticPole.POSITIVE, Properties.ofFullCopy(MAGNETITE_BLOCK.get())
+                    .setId(key("red_magnetite_block"))));
 
     public static final RegistrySupplier<Block> BLUE_DIRECTIONAL_BLOCK_MAGNET = register("blue_directional_block_magnet",
             () -> new DirectionalBlockMagnetBlock(
                     MagneticPole.NEGATIVE,
                     Properties.of()
-                        .mapColor(MapColor.STONE)
-                        .instrument(NoteBlockInstrument.BASEDRUM)
-                        .requiresCorrectToolForDrops()
-                        .strength(3.5f)
+                            .setId(key("blue_directional_block_magnet"))
+                            .mapColor(MapColor.STONE)
+                            .instrument(NoteBlockInstrument.BASEDRUM)
+                            .requiresCorrectToolForDrops()
+                            .strength(3.5f)
             ));
 
     public static final RegistrySupplier<Block> RED_DIRECTIONAL_BLOCK_MAGNET = register("red_directional_block_magnet",
-            () -> new DirectionalBlockMagnetBlock(MagneticPole.POSITIVE, Properties.ofFullCopy(BLUE_DIRECTIONAL_BLOCK_MAGNET.get())));
+            () -> new DirectionalBlockMagnetBlock(MagneticPole.POSITIVE, Properties.ofFullCopy(BLUE_DIRECTIONAL_BLOCK_MAGNET.get())
+                    .setId(key("red_directional_block_magnet"))));
 
     public static final RegistrySupplier<Block> BLUE_BLOCK_MAGNET = register("blue_block_magnet",
-            () -> new BlockMagnetBlock(MagneticPole.NEGATIVE, Properties.ofFullCopy(BLUE_DIRECTIONAL_BLOCK_MAGNET.get())));
+            () -> new BlockMagnetBlock(MagneticPole.NEGATIVE, Properties.ofFullCopy(BLUE_DIRECTIONAL_BLOCK_MAGNET.get())
+                    .setId(key("blue_block_magnet"))));
 
     public static final RegistrySupplier<Block> RED_BLOCK_MAGNET = register("red_block_magnet",
-            () -> new BlockMagnetBlock(MagneticPole.POSITIVE, Properties.ofFullCopy(BLUE_DIRECTIONAL_BLOCK_MAGNET.get())));
+            () -> new BlockMagnetBlock(MagneticPole.POSITIVE, Properties.ofFullCopy(BLUE_DIRECTIONAL_BLOCK_MAGNET.get())
+                    .setId(key("red_block_magnet"))));
 
     private static RegistrySupplier<Block> registerSimple(String id, Supplier<Properties> sup) {
-        return register(id, () -> new Block(sup.get()));
+        return register(id, () -> new Block(sup.get().setId(key(id))));
     }
 
     private static RegistrySupplier<Block> register(String id, Supplier<Block> sup) {
         return REGISTRY.register(id, sup);
+    }
+
+    private static ResourceKey<Block> key(String id) {
+        return ResourceKey.create(Registries.BLOCK, Magnetizing.resource(id));
     }
 
     public static void register() {

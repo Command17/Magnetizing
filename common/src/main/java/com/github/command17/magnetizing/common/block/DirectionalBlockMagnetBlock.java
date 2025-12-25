@@ -25,12 +25,12 @@ import net.minecraft.world.level.block.Rotation;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import net.minecraft.world.level.block.state.properties.DirectionProperty;
+import net.minecraft.world.level.block.state.properties.EnumProperty;
+import net.minecraft.world.level.redstone.Orientation;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.Vec3;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
-import org.joml.Vector3f;
+import org.jspecify.annotations.NonNull;
+import org.jspecify.annotations.Nullable;
 
 public class DirectionalBlockMagnetBlock extends DirectionalMagneticBlock {
     public static final MapCodec<DirectionalBlockMagnetBlock> CODEC = RecordCodecBuilder.mapCodec(
@@ -39,7 +39,7 @@ public class DirectionalBlockMagnetBlock extends DirectionalMagneticBlock {
                     propertiesCodec()
             ).apply(instance, DirectionalBlockMagnetBlock::new));
 
-    public static final DirectionProperty FACING = BlockStateProperties.FACING;
+    public static final EnumProperty<Direction> FACING = BlockStateProperties.FACING;
 
     private final MagneticPole pole;
 
@@ -54,10 +54,10 @@ public class DirectionalBlockMagnetBlock extends DirectionalMagneticBlock {
         );
     }
 
-    @NotNull
+    @NonNull
     @Override
     protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hitResult) {
-        if (!level.isClientSide) {
+        if (!level.isClientSide()) {
             int range = state.getValue(RANGE10);
             if (!player.isShiftKeyDown()) {
                 BlockState newState = state.cycle(RANGE10);
@@ -72,7 +72,7 @@ public class DirectionalBlockMagnetBlock extends DirectionalMagneticBlock {
 
             // Change color based on current magnetic pole
             MagneticPole pole = this.getPole(pos, state, level);
-            Vector3f color = MagnetUtil.getColorBasedOnPole(pole);
+            int color = MagnetUtil.getColorBasedOnPole(pole);
 
             RandomSource random = level.getRandom();
 
@@ -94,21 +94,21 @@ public class DirectionalBlockMagnetBlock extends DirectionalMagneticBlock {
         return this.defaultBlockState().setValue(FACING, context.getNearestLookingDirection().getOpposite());
     }
 
-    @NotNull
+    @NonNull
     @Override
     protected BlockState rotate(BlockState state, Rotation rotation) {
         return state.setValue(FACING, rotation.rotate(state.getValue(FACING)));
     }
 
-    @NotNull
+    @NonNull
     @Override
     protected BlockState mirror(BlockState state, Mirror mirror) {
         return state.rotate(mirror.getRotation(state.getValue(FACING)));
     }
 
     @Override
-    protected void neighborChanged(BlockState state, Level level, BlockPos pos, Block neighborBlock, BlockPos neighborPos, boolean movedByPiston) {
-        if (!level.isClientSide) {
+    protected void neighborChanged(@NonNull BlockState state, @NonNull Level level, @NonNull BlockPos pos, @NonNull Block neighborBlock, @Nullable Orientation orientation, boolean movedByPiston) {
+        if (!level.isClientSide()) {
             boolean disabled = state.getValue(DISABLED);
             if (disabled != level.hasNeighborSignal(pos)) {
                 level.setBlock(pos, state.cycle(DISABLED), 2);
@@ -136,18 +136,18 @@ public class DirectionalBlockMagnetBlock extends DirectionalMagneticBlock {
         return Magnetizing.CONFIG.directionalBlockMagnetForce.get();
     }
 
-    @NotNull
+    @NonNull
     public MagneticPole getStaticPole() {
         return this.pole;
     }
 
-    @NotNull
+    @NonNull
     @Override
     public MagneticPole getPole(BlockPos pos, BlockState state, LevelAccessor level) {
         return this.getStaticPole();
     }
 
-    @NotNull
+    @NonNull
     @Override
     protected MapCodec<? extends BaseEntityBlock> codec() {
         return CODEC;

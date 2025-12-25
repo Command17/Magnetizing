@@ -1,18 +1,18 @@
-// 1.21.1	2025-11-29T14:55:39.6050353	Magnetizing/Tags for minecraft:item
-a12e4b4770f413e955e6b56b6b459eebf11f407c data\minecraft\tags\item\enchantable\durability.json
-38f2ba102a00cda0913652c02dee2ca523079461 data\magnetizing\tags\item\block_magnets.json
-42e1ea5639888580bd31f925711f4638f8c523a0 data\c\tags\item\raw_blocks.json
-a12e4b4770f413e955e6b56b6b459eebf11f407c data\minecraft\tags\item\enchantable\foot_armor.json
-5cec615e378a282104d69b255a2dd71910c3d185 data\c\tags\item\storage_blocks\raw_magnetite.json
-f25dda0e37f9666e24a4c558c3c81ef864979667 data\c\tags\item\raw_materials.json
-de55e05f2932df8a2912c4a09fcbc686629a5cf2 data\c\tags\item\ingots.json
-f8b8a8ab51accde4c4bc30ca9540bff64db51b65 data\c\tags\item\storage_blocks.json
-17f88f855c20cfe57e02d57fda34528c74c69257 data\c\tags\item\ingots\magnetite.json
-7738e566211336d312d226d9b03dd6516c5cda63 data\c\tags\item\ores.json
-a61232b71961ad50a419d73991021a869096434c data\c\tags\item\storage_blocks\magnetite.json
-b98b2f6508ec717ec45aba5f0194a4d12e461525 data\magnetizing\tags\item\item_magnets.json
-87b223ecbddaaa1d32c93dd5d769ca4a9ca0da4a data\c\tags\item\nuggets.json
-5cec615e378a282104d69b255a2dd71910c3d185 data\c\tags\item\raw_blocks\magnetite.json
-5ce227b28c76328f6779ccb338ca24099a5f534c data\c\tags\item\ores\magnetite.json
-a12e4b4770f413e955e6b56b6b459eebf11f407c data\minecraft\tags\item\enchantable\equippable.json
-106a5742f8e3845450892c94fc79afcfb51c29fa data\c\tags\item\nuggets\magnetite.json
+// 1.21.11	-999999999-01-01T00:00:00	Magnetizing/Tags for minecraft:item
+de55e05f2932df8a2912c4a09fcbc686629a5cf2 data/c/tags/item/ingots.json
+17f88f855c20cfe57e02d57fda34528c74c69257 data/c/tags/item/ingots/magnetite.json
+87b223ecbddaaa1d32c93dd5d769ca4a9ca0da4a data/c/tags/item/nuggets.json
+106a5742f8e3845450892c94fc79afcfb51c29fa data/c/tags/item/nuggets/magnetite.json
+7738e566211336d312d226d9b03dd6516c5cda63 data/c/tags/item/ores.json
+5ce227b28c76328f6779ccb338ca24099a5f534c data/c/tags/item/ores/magnetite.json
+42e1ea5639888580bd31f925711f4638f8c523a0 data/c/tags/item/raw_blocks.json
+5cec615e378a282104d69b255a2dd71910c3d185 data/c/tags/item/raw_blocks/magnetite.json
+f25dda0e37f9666e24a4c558c3c81ef864979667 data/c/tags/item/raw_materials.json
+f8b8a8ab51accde4c4bc30ca9540bff64db51b65 data/c/tags/item/storage_blocks.json
+a61232b71961ad50a419d73991021a869096434c data/c/tags/item/storage_blocks/magnetite.json
+5cec615e378a282104d69b255a2dd71910c3d185 data/c/tags/item/storage_blocks/raw_magnetite.json
+38f2ba102a00cda0913652c02dee2ca523079461 data/magnetizing/tags/item/block_magnets.json
+b98b2f6508ec717ec45aba5f0194a4d12e461525 data/magnetizing/tags/item/item_magnets.json
+a12e4b4770f413e955e6b56b6b459eebf11f407c data/minecraft/tags/item/enchantable/durability.json
+a12e4b4770f413e955e6b56b6b459eebf11f407c data/minecraft/tags/item/enchantable/equippable.json
+a12e4b4770f413e955e6b56b6b459eebf11f407c data/minecraft/tags/item/enchantable/foot_armor.json

@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "building",
   "key": {
-    "#": {
-      "item": "magnetizing:raw_magnetite"
-    }
+    "#": "magnetizing:raw_magnetite"
   },
   "pattern": [
     "###",

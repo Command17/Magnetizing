@@ -5,7 +5,7 @@ import net.minecraft.network.codec.ByteBufCodecs;
 import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.util.ByIdMap;
 import net.minecraft.util.StringRepresentable;
-import org.jetbrains.annotations.NotNull;
+import org.jspecify.annotations.NonNull;
 
 import java.util.function.IntFunction;
 
@@ -31,7 +31,7 @@ public enum MagneticPole implements StringRepresentable {
         return entryId;
     }
 
-    @NotNull
+    @NonNull
     @Override
     public String getSerializedName() {
         return this.entryName;

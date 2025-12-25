@@ -1,0 +1,6 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "magnetizing:block/red_magnetite_block"
+  }
+}

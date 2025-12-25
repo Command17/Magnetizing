@@ -5,6 +5,7 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.world.entity.EntityType;
+import org.jspecify.annotations.NullMarked;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -13,9 +14,10 @@ public class ModEntityTagProvider extends FabricTagProvider.EntityTypeTagProvide
         super(output, completableFuture);
     }
 
+    @NullMarked
     @Override
     protected void addTags(HolderLookup.Provider wrapperLookup) {
-        getOrCreateTagBuilder(ModTags.EntityTags.UNMOVEABLE_BY_MAGNETS)
+        valueLookupBuilder(ModTags.EntityTags.UNMOVEABLE_BY_MAGNETS)
                 .add(EntityType.SHULKER)
                 .add(EntityType.ENDER_DRAGON)
                 .add(EntityType.EVOKER_FANGS)

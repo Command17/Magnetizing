@@ -4,15 +4,14 @@ import net.minecraft.core.particles.DustParticleOptions;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.Mth;
 import net.minecraft.world.phys.Vec3;
-import org.joml.Vector3f;
 
 public final class MagnetUtil {
     private MagnetUtil() {}
 
-    public static final Vector3f NEGATIVE_COLOR_V3F = Vec3.fromRGB24(0x4903fc).toVector3f();
-    public static final Vector3f POSITIVE_COLOR_V3F = DustParticleOptions.REDSTONE_PARTICLE_COLOR;
+    public static final int NEGATIVE_COLOR_V3F = 0x4903fc;
+    public static final int POSITIVE_COLOR_V3F = DustParticleOptions.REDSTONE_PARTICLE_COLOR;
 
-    public static Vector3f getColorBasedOnPole(MagneticPole pole) {
+    public static int getColorBasedOnPole(MagneticPole pole) {
         return pole == MagneticPole.POSITIVE ? POSITIVE_COLOR_V3F : NEGATIVE_COLOR_V3F;
     }
 
@@ -20,7 +19,7 @@ public final class MagnetUtil {
         showBoxParticlesServerSide(level, pos, range, getColorBasedOnPole(pole));
     }
 
-    public static void showBoxParticlesServerSide(ServerLevel level, Vec3 pos, double range, Vector3f color) {
+    public static void showBoxParticlesServerSide(ServerLevel level, Vec3 pos, double range, int color) {
         double startX = pos.x - range;
         double startY = pos.y - range;
         double startZ = pos.z - range;

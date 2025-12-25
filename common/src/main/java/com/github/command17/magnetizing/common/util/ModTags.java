@@ -2,7 +2,7 @@ package com.github.command17.magnetizing.common.util;
 
 import com.github.command17.magnetizing.Magnetizing;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.Item;
@@ -11,8 +11,8 @@ import net.minecraft.world.level.block.Block;
 public final class ModTags {
     private ModTags() {}
 
-    public static ResourceLocation conventionResource(String path) {
-        return ResourceLocation.fromNamespaceAndPath("c", path);
+    public static Identifier conventionResource(String path) {
+        return Identifier.fromNamespaceAndPath("c", path);
     }
 
     public static final class ItemTags {

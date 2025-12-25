@@ -13,6 +13,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.AABB;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jspecify.annotations.NonNull;
 
 public abstract class DirectionalMagneticBlock extends MagneticBlock {
     public DirectionalMagneticBlock(Properties properties) {
@@ -32,14 +33,14 @@ public abstract class DirectionalMagneticBlock extends MagneticBlock {
 
     @Nullable
     @Override
-    public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
+    public BlockEntity newBlockEntity(@NonNull BlockPos pos, @NonNull BlockState state) {
         return new DirectionalMagneticBlockEntity(pos, state);
     }
 
     @Nullable
     @Override
-    public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state, BlockEntityType<T> blockEntityType) {
-        return level.isClientSide ? null : createTickerHelper(blockEntityType, ModBlockEntities.DIRECTIONAL_MAGNETIC_BLOCK.get(),
+    public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, @NonNull BlockState state, @NonNull BlockEntityType<T> blockEntityType) {
+        return level.isClientSide() ? null : createTickerHelper(blockEntityType, ModBlockEntities.DIRECTIONAL_MAGNETIC_BLOCK.get(),
                 (level1, pos, state1, blockEntity) -> blockEntity.tick(pos, state1, level1));
     }
 }

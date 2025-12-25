@@ -1,0 +1,6 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "magnetizing:block/blue_directional_block_magnet"
+  }
+}

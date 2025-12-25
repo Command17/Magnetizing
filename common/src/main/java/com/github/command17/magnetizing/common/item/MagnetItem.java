@@ -9,7 +9,7 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
@@ -17,7 +17,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
-import org.jetbrains.annotations.NotNull;
+import org.jspecify.annotations.NonNull;
 
 public class MagnetItem extends Item {
     public static final double DEFAULT_MAGNET_FORCE = 0.05;
@@ -29,13 +29,13 @@ public class MagnetItem extends Item {
         super(properties);
     }
 
-    @NotNull
+    @NonNull
     @Override
-    public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
+    public InteractionResult use(Level level, Player player, @NonNull InteractionHand hand) {
         ItemStack stack = player.getItemInHand(hand);
         Vec3 pos = player.position().add(0, 1, 0);
         boolean showParticles = player.isShiftKeyDown() || hand != InteractionHand.OFF_HAND;
-        if (!level.isClientSide) {
+        if (!level.isClientSide()) {
             int maxRange = stack.has(ModItemComponents.MAX_MAGNET_RANGE.get()) ? stack.get(ModItemComponents.MAX_MAGNET_RANGE.get()) : DEFAULT_MAX_MAGNET_RANGE;
             int range = stack.has(ModItemComponents.MAGNET_RANGE.get()) ? stack.get(ModItemComponents.MAGNET_RANGE.get()) : DEFAULT_MAGNET_RANGE;
             MagneticPole pole = stack.has(ModItemComponents.MAGNET_POLE.get()) ? stack.get(ModItemComponents.MAGNET_POLE.get()) : DEFAULT_MAGNETIC_POLE;
@@ -55,7 +55,7 @@ public class MagnetItem extends Item {
             }
         }
 
-        return showParticles ? InteractionResultHolder.success(stack) : super.use(level, player, hand);
+        return showParticles ? InteractionResult.SUCCESS : super.use(level, player, hand);
     }
 
     public static boolean magneticEntityPredicate(Entity entity) {

@@ -15,8 +15,8 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.phys.AABB;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
+import org.jspecify.annotations.NonNull;
+import org.jspecify.annotations.Nullable;
 
 public abstract class MagneticBlock extends BaseEntityBlock {
     public static final BooleanProperty DISABLED = BooleanProperty.create("disabled");
@@ -31,7 +31,7 @@ public abstract class MagneticBlock extends BaseEntityBlock {
         return true;
     }
 
-    @NotNull
+    @NonNull
     public AABB getMagnetBounds(BlockPos pos, BlockState state, LevelAccessor level) {
         return state.getCollisionShape(level, pos).bounds().move(pos).inflate(this.getMagnetRange(pos, state, level));
     }
@@ -39,25 +39,25 @@ public abstract class MagneticBlock extends BaseEntityBlock {
     public abstract double getMagnetRange(BlockPos pos, BlockState state, LevelAccessor level);
     public abstract double getMagnetForce(BlockPos pos, BlockState state, LevelAccessor level);
 
-    @NotNull
+    @NonNull
     public abstract MagneticPole getPole(BlockPos pos, BlockState state, LevelAccessor level);
 
-    @NotNull
+    @NonNull
     @Override
-    protected RenderShape getRenderShape(BlockState state) {
+    protected RenderShape getRenderShape(@NonNull BlockState state) {
         return RenderShape.MODEL;
     }
 
     @Nullable
     @Override
-    public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
+    public BlockEntity newBlockEntity(@NonNull BlockPos pos, @NonNull BlockState state) {
         return new MagneticBlockEntity(pos, state);
     }
 
     @Nullable
     @Override
-    public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state, BlockEntityType<T> blockEntityType) {
-        return level.isClientSide ? null : createTickerHelper(blockEntityType, ModBlockEntities.MAGNETIC_BLOCK.get(),
+    public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, @NonNull BlockState state, @NonNull BlockEntityType<T> blockEntityType) {
+        return level.isClientSide() ? null : createTickerHelper(blockEntityType, ModBlockEntities.MAGNETIC_BLOCK.get(),
                 (level1, pos, state1, blockEntity) -> blockEntity.tick(pos, state1, level1));
     }
 }

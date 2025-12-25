@@ -4,9 +4,7 @@
   "cookingtime": 100,
   "experience": 0.7,
   "group": "magnetite_ingot_blasting",
-  "ingredient": {
-    "item": "magnetizing:raw_magnetite"
-  },
+  "ingredient": "magnetizing:raw_magnetite",
   "result": {
     "id": "magnetizing:magnetite_ingot"
   }

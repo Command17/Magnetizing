@@ -1,0 +1,14 @@
+{
+  "layers": {
+    "humanoid": [
+      {
+        "texture": "magnetizing:anti_magnetic"
+      }
+    ],
+    "humanoid_leggings": [
+      {
+        "texture": "magnetizing:anti_magnetic"
+      }
+    ]
+  }
+}
