@@ -1,6 +1,4 @@
-*Bumped version to **1.0.0***
+*Version **1.0.0*** is now available for **1.21.11**!
 
 **Changelog:**
-- Refactored some internal code
-- Changed config name from *magnetizing-startup.toml* to *magnetizing-config.toml*
-- Added German (*de_de*) translation
+- Ported to 1.21.11
