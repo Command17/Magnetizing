@@ -5,6 +5,7 @@ import com.github.command17.magnetizing.common.item.component.ModItemComponents;
 import com.github.command17.magnetizing.common.util.MagneticPole;
 import com.github.command17.magnetizing.common.util.ModTags;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Position;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
@@ -18,6 +19,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 
+import java.lang.reflect.Field;
 import java.util.Iterator;
 import java.util.List;
 
@@ -37,11 +39,38 @@ public class MagneticBlockEntity extends BlockEntity {
             double force = pole == MagneticPole.POSITIVE ? this.getMagnetForce(): -this.getMagnetForce();
             List<Entity> entities = level.getEntities((Entity) null, bounds, this::canAffectEntity);
             for (Entity entity: entities) {
-                Vec3 direction = pos.getCenter().subtract(entity.position()).normalize();
+                Vec3 direction = sableCompanionWorkAround(level, pos.getCenter()).subtract(entity.position()).normalize();
                 entity.setDeltaMovement(this.getVelocityForEntity(entity, direction, force));
                 entity.hurtMarked = true;
             }
         }
+    }
+
+    // I can't include SableCompanion since it needs loom 1.15. Architectury loom is only available until 1.14
+    private static Vec3 sableCompanionWorkAround(Level level, Vec3 pos) {
+        try {
+            Class<?> sableCompanion = Class.forName("dev.ryanhcode.sable.companion.SableCompanion");
+            Field instance = sableCompanion.getField("INSTANCE");
+            return (Vec3) ((Class<?>) instance.get(MagneticBlockEntity.class)).getMethod("projectOutOfSubLevel", Level.class, Position.class)
+                    .invoke(MagneticBlockEntity.class, level, new Position() {
+                        @Override
+                        public double x() {
+                            return pos.x();
+                        }
+
+                        @Override
+                        public double y() {
+                            return pos.y();
+                        }
+
+                        @Override
+                        public double z() {
+                            return pos.z();
+                        }
+                    });
+        } catch (Exception ignored) {}
+
+        return pos;
     }
 
     public Vec3 getVelocityForEntity(Entity entity, Vec3 direction, double force) {

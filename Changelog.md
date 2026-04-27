@@ -1,6 +1,4 @@
-*Bumped version to **1.0.0***
+*Bumped version to **1.1.0***
 
 **Changelog:**
-- Refactored some internal code
-- Changed config name from *magnetizing-startup.toml* to *magnetizing-config.toml*
-- Added German (*de_de*) translation
+- Added hacky support for Sable
